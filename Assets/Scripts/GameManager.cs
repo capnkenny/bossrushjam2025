@@ -7,7 +7,8 @@ public class GameManager : MonoBehaviour
 {
     [Header("Scene Indices")]
 
-    
+    [SerializeField] public int TitleScreenSceneIndex;
+    [SerializeField] public int SinglePlayerLobbySceneIndex;
     [SerializeField] public int RouletteCutsceneIndex;
     [SerializeField] public int RouletteTableSceneIndex;
     [SerializeField] public int SlotMachineCutsceneIndex;
