@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Blackjack_Table_0: -7605774689827911311
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
