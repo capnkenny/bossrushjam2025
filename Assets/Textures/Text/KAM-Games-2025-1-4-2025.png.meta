@@ -1,0 +1,491 @@
+fileFormatVersion: 2
+guid: 9f953e1699cc3cd41a26e778d6f1fb69
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 4369064082326997613
+    second: KAM-Games-2025-1-4-2025_0
+  - first:
+      213: 5756912433594684999
+    second: KAM-Games-2025-1-4-2025_1
+  - first:
+      213: -907798043272703282
+    second: KAM-Games-2025-1-4-2025_2
+  - first:
+      213: 3405045608207328797
+    second: KAM-Games-2025-1-4-2025_3
+  - first:
+      213: -3503831283372954586
+    second: KAM-Games-2025-1-4-2025_4
+  - first:
+      213: -8484790963431187040
+    second: KAM-Games-2025-1-4-2025_5
+  - first:
+      213: 208013982100412036
+    second: KAM-Games-2025-1-4-2025_6
+  - first:
+      213: 7949883447116477402
+    second: KAM-Games-2025-1-4-2025_7
+  - first:
+      213: -7681100231127536260
+    second: KAM-Games-2025-1-4-2025_8
+  - first:
+      213: 6965663818881988158
+    second: KAM-Games-2025-1-4-2025_9
+  - first:
+      213: 1449075042605458851
+    second: KAM-Games-2025-1-4-2025_10
+  - first:
+      213: 7297460418806944999
+    second: KAM-Games-2025-1-4-2025_11
+  - first:
+      213: 6496239182518198358
+    second: KAM-Games-2025-1-4-2025_12
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: KAM-Games-2025-1-4-2025_0
+      rect:
+        serializedVersion: 2
+        x: 46
+        y: 51
+        width: 54
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d7bce8f636ecf3d4a9ce1a926f6b8d75
+      internalID: 1501388606
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KAM-Games-2025-1-4-2025_1
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 51
+        width: 54
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3daa0d44a2d1f2843b90ed6a6f4e7ac5
+      internalID: -202681548
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KAM-Games-2025-1-4-2025_2
+      rect:
+        serializedVersion: 2
+        x: 163
+        y: 51
+        width: 54
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8da6963fd73319245b128342c2b819f3
+      internalID: 1324725576
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KAM-Games-2025-1-4-2025_3
+      rect:
+        serializedVersion: 2
+        x: 279
+        y: 51
+        width: 54
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 86cfdd335430e314a94f399b7c6cbff2
+      internalID: -1119740592
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KAM-Games-2025-1-4-2025_4
+      rect:
+        serializedVersion: 2
+        x: 337
+        y: 51
+        width: 54
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 52bc361e836a0a24389e0ae2bea703fe
+      internalID: 1181564453
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KAM-Games-2025-1-4-2025_5
+      rect:
+        serializedVersion: 2
+        x: 395
+        y: 51
+        width: 54
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 72455ad27559b274289c866e1b7892ae
+      internalID: 895816983
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KAM-Games-2025-1-4-2025_6
+      rect:
+        serializedVersion: 2
+        x: 453
+        y: 51
+        width: 54
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b9eaea3edf9fd5a46ba0dae012567cee
+      internalID: 1495681085
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KAM-Games-2025-1-4-2025_7
+      rect:
+        serializedVersion: 2
+        x: 511
+        y: 51
+        width: 54
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3666abe988a11f240aa1ef6a09642b7f
+      internalID: -589175657
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KAM-Games-2025-1-4-2025_8
+      rect:
+        serializedVersion: 2
+        x: 627
+        y: 51
+        width: 54
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f762f02e1a45ce74ba41229f9974abcc
+      internalID: -1957139820
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KAM-Games-2025-1-4-2025_9
+      rect:
+        serializedVersion: 2
+        x: 685
+        y: 51
+        width: 54
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 03c0002c8817f9346987d87c269e20c2
+      internalID: 1326360020
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KAM-Games-2025-1-4-2025_10
+      rect:
+        serializedVersion: 2
+        x: 743
+        y: 51
+        width: 54
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3d1608e85a0cf054a8b02ecc345bb2b7
+      internalID: -388042461
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KAM-Games-2025-1-4-2025_11
+      rect:
+        serializedVersion: 2
+        x: 801
+        y: 51
+        width: 54
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 953ebc7315a5f404ca25008c74a1c339
+      internalID: -572975985
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KAM-Games-2025-1-4-2025_12
+      rect:
+        serializedVersion: 2
+        x: 918
+        y: 45
+        width: 60
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 11c9e6edecc0793429d9cbd03ad6f8fe
+      internalID: -1399105278
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KAM-Games-2025-1-4-2025_13
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 25
+        width: 982
+        height: 107
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0ccd004042a48c8449ef696959388585
+      internalID: 719028629
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 12b0eb4a04c129d4aa67a32b185482a8
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      KAM-Games-2025-1-4-2025_0: 1501388606
+      KAM-Games-2025-1-4-2025_1: -202681548
+      KAM-Games-2025-1-4-2025_10: -388042461
+      KAM-Games-2025-1-4-2025_11: -572975985
+      KAM-Games-2025-1-4-2025_12: -1399105278
+      KAM-Games-2025-1-4-2025_13: 719028629
+      KAM-Games-2025-1-4-2025_2: 1324725576
+      KAM-Games-2025-1-4-2025_3: -1119740592
+      KAM-Games-2025-1-4-2025_4: 1181564453
+      KAM-Games-2025-1-4-2025_5: 895816983
+      KAM-Games-2025-1-4-2025_6: 1495681085
+      KAM-Games-2025-1-4-2025_7: -589175657
+      KAM-Games-2025-1-4-2025_8: -1957139820
+      KAM-Games-2025-1-4-2025_9: 1326360020
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

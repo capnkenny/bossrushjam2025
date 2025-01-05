@@ -1,0 +1,572 @@
+fileFormatVersion: 2
+guid: 56d9e10c6b89d9d408555a8979231e98
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -379111106339395889
+    second: Play-Options-Exit-1-4-2025_0
+  - first:
+      213: -1893165181680228813
+    second: Play-Options-Exit-1-4-2025_1
+  - first:
+      213: 884258635504957070
+    second: Play-Options-Exit-1-4-2025_2
+  - first:
+      213: 3983249894831118493
+    second: Play-Options-Exit-1-4-2025_3
+  - first:
+      213: 7663242915467352856
+    second: Play-Options-Exit-1-4-2025_4
+  - first:
+      213: 7094096251016914283
+    second: Play-Options-Exit-1-4-2025_5
+  - first:
+      213: 3893911661028465971
+    second: Play-Options-Exit-1-4-2025_6
+  - first:
+      213: 7064003548331322679
+    second: Play-Options-Exit-1-4-2025_7
+  - first:
+      213: 30647521548521636
+    second: Play-Options-Exit-1-4-2025_8
+  - first:
+      213: 4496800101030175116
+    second: Play-Options-Exit-1-4-2025_9
+  - first:
+      213: -5537260230459129836
+    second: Play-Options-Exit-1-4-2025_10
+  - first:
+      213: 5952663945527025766
+    second: Play-Options-Exit-1-4-2025_11
+  - first:
+      213: -203110729942390321
+    second: Play-Options-Exit-1-4-2025_12
+  - first:
+      213: 1920678872495523459
+    second: Play-Options-Exit-1-4-2025_13
+  - first:
+      213: -1960293816496953955
+    second: Play-Options-Exit-1-4-2025_14
+  - first:
+      213: 5736597497461903884
+    second: Play-Options-Exit-1-4-2025_15
+  - first:
+      213: 4707110211264091416
+    second: Play-Options-Exit-1-4-2025_16
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Play-Options-Exit-1-4-2025_0
+      rect:
+        serializedVersion: 2
+        x: 249
+        y: 559
+        width: 532
+        height: 149
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 5, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d86f3ac826113d944a0b2f74c0f8d14f
+      internalID: 1858729955
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Play-Options-Exit-1-4-2025_1
+      rect:
+        serializedVersion: 2
+        x: 402
+        y: 588
+        width: 104
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 73576f8c1f5175b46b1e8f150043c148
+      internalID: 1735612916
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Play-Options-Exit-1-4-2025_2
+      rect:
+        serializedVersion: 2
+        x: 520
+        y: 588
+        width: 121
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f83c68f8e934af743abb00467bc41dfc
+      internalID: -937414043
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Play-Options-Exit-1-4-2025_3
+      rect:
+        serializedVersion: 2
+        x: 655
+        y: 571
+        width: 122
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 04829889a6d24aa4fa63d2603bfec10b
+      internalID: 1332219930
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Play-Options-Exit-1-4-2025_4
+      rect:
+        serializedVersion: 2
+        x: 44
+        y: 293
+        width: 944
+        height: 153
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 4}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 79ef63f0a5c54ba489990e51c67fc280
+      internalID: 934141581
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Play-Options-Exit-1-4-2025_5
+      rect:
+        serializedVersion: 2
+        x: 334
+        y: 316
+        width: 104
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d16c78bb034354d42ad1d2232f5cd70e
+      internalID: -605972903
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Play-Options-Exit-1-4-2025_6
+      rect:
+        serializedVersion: 2
+        x: 503
+        y: 417
+        width: 37
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ce76b97b73cc6e443a7c8be21f4038fc
+      internalID: 1528141965
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Play-Options-Exit-1-4-2025_7
+      rect:
+        serializedVersion: 2
+        x: 182
+        y: 299
+        width: 121
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c319a37a83b0fda4fa6227675882b495
+      internalID: -13424502
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Play-Options-Exit-1-4-2025_8
+      rect:
+        serializedVersion: 2
+        x: 469
+        y: 316
+        width: 105
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 39940c8f7c3c29740b0f71775f29edd1
+      internalID: 434469941
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Play-Options-Exit-1-4-2025_9
+      rect:
+        serializedVersion: 2
+        x: 587
+        y: 316
+        width: 122
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 127ead1bb319200498d958eb56245a33
+      internalID: 1967132750
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Play-Options-Exit-1-4-2025_10
+      rect:
+        serializedVersion: 2
+        x: 723
+        y: 316
+        width: 121
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2b27fb85316ceed43a139d0938a9ea6e
+      internalID: -893625427
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Play-Options-Exit-1-4-2025_11
+      rect:
+        serializedVersion: 2
+        x: 858
+        y: 316
+        width: 120
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 812001de996eb744787e4b6dc27d8d50
+      internalID: -600944370
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Play-Options-Exit-1-4-2025_12
+      rect:
+        serializedVersion: 2
+        x: 249
+        y: 41
+        width: 532
+        height: 123
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2da2e8e20765172409c44d51bdee8cce
+      internalID: -76833215
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Play-Options-Exit-1-4-2025_13
+      rect:
+        serializedVersion: 2
+        x: 570
+        y: 145
+        width: 38
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 706f6f9832a5d2f4b9c417075e4d98ea
+      internalID: 963372610
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Play-Options-Exit-1-4-2025_14
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 45
+        width: 105
+        height: 119
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 36792a3332377b6429c2561283c1c0c4
+      internalID: -1351727050
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Play-Options-Exit-1-4-2025_15
+      rect:
+        serializedVersion: 2
+        x: 385
+        y: 45
+        width: 121
+        height: 86
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b72f17066754ad74fa712ac0b3da8d2a
+      internalID: -1705484695
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Play-Options-Exit-1-4-2025_16
+      rect:
+        serializedVersion: 2
+        x: 537
+        y: 45
+        width: 104
+        height: 86
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b61a77ce1840ff24cac8119297f1e1fc
+      internalID: 1023152779
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 6a02b6cb76765d242a7f134408979dd9
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Play-Options-Exit-1-4-2025_0: 1858729955
+      Play-Options-Exit-1-4-2025_1: 1735612916
+      Play-Options-Exit-1-4-2025_10: -893625427
+      Play-Options-Exit-1-4-2025_11: -600944370
+      Play-Options-Exit-1-4-2025_12: -76833215
+      Play-Options-Exit-1-4-2025_13: 963372610
+      Play-Options-Exit-1-4-2025_14: -1351727050
+      Play-Options-Exit-1-4-2025_15: -1705484695
+      Play-Options-Exit-1-4-2025_16: 1023152779
+      Play-Options-Exit-1-4-2025_2: -937414043
+      Play-Options-Exit-1-4-2025_3: 1332219930
+      Play-Options-Exit-1-4-2025_4: 934141581
+      Play-Options-Exit-1-4-2025_5: -605972903
+      Play-Options-Exit-1-4-2025_6: 1528141965
+      Play-Options-Exit-1-4-2025_7: -13424502
+      Play-Options-Exit-1-4-2025_8: 434469941
+      Play-Options-Exit-1-4-2025_9: 1967132750
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
