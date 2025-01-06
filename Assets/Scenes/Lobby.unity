@@ -47776,7 +47776,10 @@ MonoBehaviour:
   moveSpeed: 2
   rb: {fileID: 1557986981}
   animator: {fileID: 1557986975}
+  animationSmoothingValue: 0
   movement: {x: 0, y: 0}
+  previousMovement: {x: 0, y: 0}
+  isRunning: 0
 --- !u!4 &1557986979
 Transform:
   m_ObjectHideFlags: 0
@@ -47787,8 +47790,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -7.9, y: 0.44, z: -1}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 1832964415}
   m_Father: {fileID: 0}
