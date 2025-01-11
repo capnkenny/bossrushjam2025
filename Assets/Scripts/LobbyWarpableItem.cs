@@ -5,20 +5,25 @@ using UnityEngine.InputSystem;
 public class LobbyWarpableItem : MonoBehaviour
 {
     [SerializeField] private WarpToLevel warpComponent;
-    [SerializeField] private InputAction action;
+    [SerializeField] private LockableBehaviour lockable;
+    private InputAction action;
 
     private bool enabled = false;
     private bool activated = false;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    private bool locked = true;
+
+    void Awake()
     {
-        
+        action = InputSystem.actions.FindAction("Attack");
+        if (lockable == null)
+            locked = false;
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(enabled)
+        if(enabled && !locked)
         {
             if(action.IsPressed())
             {
