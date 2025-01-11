@@ -11,6 +11,18 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Main Menu.unity
     guid: fc4a4b4e0837cab45a7fc7e8d6a283ec
+  - enabled: 1
+    path: Assets/Scenes/Lobby.unity
+    guid: 1e268895d38b11749bb0913fec029e8e
+  - enabled: 1
+    path: Assets/Scenes/SlotMachineBattle.unity
+    guid: 8bb7f7f5fecf460448fa34bba538d5ba
+  - enabled: 1
+    path: Assets/Scenes/RouletteBattle.unity
+    guid: 51d6a1ed111783d4083fc66b5bd02233
+  - enabled: 1
+    path: Assets/Scenes/CardBattle.unity
+    guid: 9280304450630ca419c2d8814083a6db
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0
