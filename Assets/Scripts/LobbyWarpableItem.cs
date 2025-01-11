@@ -8,22 +8,28 @@ public class LobbyWarpableItem : MonoBehaviour
     [SerializeField] private LockableBehaviour lockable;
     private InputAction action;
 
-    private bool enabled = false;
+    public bool Enabled = false;
     private bool activated = false;
     private bool locked = true;
+    private bool lockableFound = false;
 
     void Awake()
     {
         action = InputSystem.actions.FindAction("Attack");
         if (lockable == null)
             locked = false;
+        else
+            lockableFound = true;
 
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(enabled && !locked)
+        if(lockableFound)
+            locked = lockable.Locked;
+
+        if(Enabled && !locked)
         {
             if(action.IsPressed())
             {
@@ -43,7 +49,7 @@ public class LobbyWarpableItem : MonoBehaviour
         Debug.Log("LWI col: "+ this.gameObject.name + " / " + other.gameObject.name);
         if(other.gameObject.tag == "Player")
         {
-            enabled = true;
+            Enabled = true;
         }
     }
 
@@ -51,7 +57,7 @@ public class LobbyWarpableItem : MonoBehaviour
     {
         if(other.gameObject.tag == "Player")
         {
-            enabled = true;
+            Enabled = true;
         }
     }
 }
