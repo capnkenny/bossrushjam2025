@@ -1,4 +1,3 @@
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -6,6 +5,13 @@ public class LobbyWarpableItem : MonoBehaviour
 {
     [SerializeField] private WarpToLevel warpComponent;
     [SerializeField] private LockableBehaviour lockable;
+
+    [SerializeField] public LobbyAction[] ActionsBeforeWarp;
+
+    [SerializeField] public LobbyAction[] EventsOnEnable;
+    [SerializeField] public LobbyAction[] EventsOnDisable;
+    [SerializeField] private int SecondsBeforeWarp = 0;
+    
     private InputAction action;
 
     public bool Enabled = false;
@@ -40,7 +46,17 @@ public class LobbyWarpableItem : MonoBehaviour
         if(activated)
         {
             activated = false;
-            warpComponent.Warp();
+            if(ActionsBeforeWarp != null)
+            {
+                foreach(var act in ActionsBeforeWarp)
+                {
+                    act.PerformAction();
+                }
+            }
+            if(SecondsBeforeWarp <= 0)
+                warpComponent.Warp();
+            else
+                warpComponent.Warp(SecondsBeforeWarp);
         }
     }
 
@@ -50,6 +66,13 @@ public class LobbyWarpableItem : MonoBehaviour
         if(other.gameObject.tag == "Player")
         {
             Enabled = true;
+            if(EventsOnEnable != null)
+            {
+                foreach(var act in EventsOnEnable)
+                {
+                    act.PerformAction();
+                }
+            }
         }
     }
 
@@ -57,7 +80,14 @@ public class LobbyWarpableItem : MonoBehaviour
     {
         if(other.gameObject.tag == "Player")
         {
-            Enabled = true;
+            Enabled = false;
+            if(EventsOnDisable != null)
+            {
+                foreach(var act in EventsOnDisable)
+                {
+                    act.PerformAction();
+                }
+            }
         }
     }
 }

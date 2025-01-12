@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -15,6 +16,10 @@ public class WarpToLevel : MonoBehaviour
 
     private GoToLevelFunction GoToLevel;
     private TransitionLevelFunction TransitionToLevel;
+
+    private bool debugTimerActivated = false;
+    private float timeToWait = 0;
+    private float timePassed = 0f;
     
     void Start()
     {
@@ -22,7 +27,7 @@ public class WarpToLevel : MonoBehaviour
         if(list == null || list.Length == 0)
         {
             GoToLevel = (level) => SceneManager.LoadScene(level);
-            TransitionToLevel = (level, _) => SceneManager.LoadScene(level);
+            TransitionToLevel = (level, delay) => { DebugTransition(level, delay);};
         }
         else
         {
@@ -32,12 +37,35 @@ public class WarpToLevel : MonoBehaviour
         }
     }
 
+    void Update()
+    {
+        if(debugTimerActivated)
+        {
+            timePassed += Time.deltaTime;
+            if(timePassed >= timeToWait)
+            {
+                SceneManager.LoadScene(LevelIndex);
+            }
+        }
+    }
+
     public void Warp()
     {
         if(ShowTransition)
             TransitionToLevel(LevelIndex, TransitionDelay);
         else
             GoToLevel(LevelIndex);
+    }
+
+    public void Warp(int delayInSeconds)
+    {
+        TransitionToLevel(LevelIndex, delayInSeconds);
+    }
+
+    private void DebugTransition(int level, int delayInSeconds)
+    {
+        debugTimerActivated = true;
+        timeToWait = delayInSeconds;
     }
 
 }
