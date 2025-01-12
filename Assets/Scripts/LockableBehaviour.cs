@@ -5,12 +5,7 @@ public class LockableBehaviour : MonoBehaviour
     [SerializeField] private SpriteRenderer spriteRenderer;
     [SerializeField] private SpriteRenderer secondaryRenderer;
     [SerializeField] public bool Locked = true;
-
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
+    [SerializeField] private GameObject[] objectsToHide;
 
     // Update is called once per frame
     void Update()
@@ -22,6 +17,14 @@ public class LockableBehaviour : MonoBehaviour
         if(secondaryRenderer != null)
         {
             secondaryRenderer.material?.SetInt("_Locked", Locked ? 1 : 0);
+        }
+
+        if(objectsToHide != null && objectsToHide.Length > 0)
+        {
+            foreach(GameObject o in objectsToHide)
+            {
+                o.SetActive(!Locked);   //If locked, we'll disable the gameobject
+            }
         }
     }
 }
