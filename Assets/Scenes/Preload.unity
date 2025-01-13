@@ -219,6 +219,30 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 597891807088682941, guid: 241cbcb5f0a99244f8eb23e29d3b74fa, type: 3}
+      propertyPath: CrapsTableSceneIndex
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 597891807088682941, guid: 241cbcb5f0a99244f8eb23e29d3b74fa, type: 3}
+      propertyPath: RouletteCutsceneIndex
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 597891807088682941, guid: 241cbcb5f0a99244f8eb23e29d3b74fa, type: 3}
+      propertyPath: SlotMachineSceneIndex
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 597891807088682941, guid: 241cbcb5f0a99244f8eb23e29d3b74fa, type: 3}
+      propertyPath: CrapsTableCutsceneIndex
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 597891807088682941, guid: 241cbcb5f0a99244f8eb23e29d3b74fa, type: 3}
+      propertyPath: RouletteTableSceneIndex
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 597891807088682941, guid: 241cbcb5f0a99244f8eb23e29d3b74fa, type: 3}
+      propertyPath: SlotMachineCutsceneIndex
+      value: -1
+      objectReference: {fileID: 0}
     - target: {fileID: 2069786971102727663, guid: 241cbcb5f0a99244f8eb23e29d3b74fa, type: 3}
       propertyPath: m_Name
       value: GameManager

@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Bacarat_Table_0: -6329807025307172415
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

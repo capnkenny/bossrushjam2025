@@ -522,7 +522,23 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Cards_Diamonds_0: 1446688188011299598
+      Cards_Diamonds_1: -7159389586815081426
+      Cards_Diamonds_10: -7693263239470991045
+      Cards_Diamonds_11: 3592263938608670762
+      Cards_Diamonds_12: -926424838465836162
+      Cards_Diamonds_13: 5656183940811265418
+      Cards_Diamonds_14: 7692152730439778401
+      Cards_Diamonds_15: 2983520374499082617
+      Cards_Diamonds_2: 3781856443594447642
+      Cards_Diamonds_3: -9037406521695331919
+      Cards_Diamonds_4: -3342125947178453508
+      Cards_Diamonds_5: -927219162211244309
+      Cards_Diamonds_6: -5818430749497565947
+      Cards_Diamonds_7: -7301314492659170664
+      Cards_Diamonds_8: -453556302559498657
+      Cards_Diamonds_9: 5340995433318919884
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

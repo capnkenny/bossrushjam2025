@@ -522,7 +522,23 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Cards_Clubs_0: -1200574394295941595
+      Cards_Clubs_1: 3086880686849688136
+      Cards_Clubs_10: 9024336957740014767
+      Cards_Clubs_11: 610226476690793316
+      Cards_Clubs_12: 4969343752701015380
+      Cards_Clubs_13: -7524746876099606174
+      Cards_Clubs_14: -4349961712349691178
+      Cards_Clubs_15: -7064475677448013731
+      Cards_Clubs_2: 2170901273389755822
+      Cards_Clubs_3: 7213160358830961203
+      Cards_Clubs_4: -7673202487676567471
+      Cards_Clubs_5: -40855599664421139
+      Cards_Clubs_6: 1723794353943399095
+      Cards_Clubs_7: -3734491065293048203
+      Cards_Clubs_8: 3283509508027258886
+      Cards_Clubs_9: -349750001295922691
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

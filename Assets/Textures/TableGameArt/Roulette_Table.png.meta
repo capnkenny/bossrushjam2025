@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Roulette_Table_0: 699555111245672813
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
