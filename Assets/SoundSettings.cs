@@ -6,10 +6,11 @@ public class SoundSettings : MonoBehaviour
 {
     [SerializeField]  Slider soundSlider;
     [SerializeField] AudioMixer masterMixer;
+    [SerializeField] int defaultVolume;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     private void Start()
     {
-        SetVolume(PlayerPrefs.GetFloat("SavedMasterVolume", 100));
+        SetVolume(PlayerPrefs.GetFloat("SavedMasterVolume", defaultVolume));
     }
 
     // Update is called once per frame
@@ -30,7 +31,7 @@ public class SoundSettings : MonoBehaviour
         SetVolume(soundSlider.value);
     }
 
-    public void RefreshSlider()
+    public void RefreshSlider(float _value)
     {
         soundSlider.value = _value;
     }
