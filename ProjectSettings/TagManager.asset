@@ -5,6 +5,17 @@ TagManager:
   serializedVersion: 3
   tags:
   - SlotMachineTrigger
+  - Roulette 0 Green
+  - Roulette 1 Black
+  - Roulette 2 Black
+  - Roulette 3 Black
+  - Roulette 4 Black
+  - Roulette 5 Black
+  - Roulette 1 Red
+  - Roulette 2 Red
+  - Roulette 3 Red
+  - Roulette 4 Red
+  - Roulette 5 Red
   layers:
   - Default
   - TransparentFX
@@ -41,6 +52,12 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Roulette
+    uniqueID: 846595761
+    locked: 0
+  - name: Ball
+    uniqueID: 698089073
     locked: 0
   m_RenderingLayers:
   - Default
