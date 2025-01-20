@@ -39,6 +39,9 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: SlotMachineLayer
+    uniqueID: 2764781201
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
