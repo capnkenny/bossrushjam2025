@@ -272,7 +272,13 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      SlotBossIdle_0: 3703114440231899900
+      SlotBossIdle_1: -2420171507813318466
+      SlotBossIdle_2: 3760765355043804217
+      SlotBossIdle_3: 682768237482704965
+      SlotBossIdle_4: 8087436366048587859
+      SlotBossIdle_5: 5806834249489923707
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
