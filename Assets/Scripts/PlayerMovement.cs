@@ -15,6 +15,10 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField]private Vector2 previousMovement;
     [SerializeField]private bool isRunning;
 
+    [Header("Wheel Properties")]
+    [SerializeField] private Transform wheelCenter;
+    [SerializeField] private float wheelRadius;
+
     private float idleValue = 0.1f;
     private float trueSpeed = 0.0f;
     private float animationX = 0;
@@ -29,6 +33,10 @@ public class PlayerMovement : MonoBehaviour
             animationSmoothingValue = 2;
         if (moveSpeed <= 0)
             moveSpeed = 2f;
+
+        int playerLayer = LayerMask.NameToLayer("Player");
+        int rouletteLayer = LayerMask.NameToLayer("Roulette");
+        Physics2D.IgnoreLayerCollision(playerLayer, rouletteLayer, true);
     }
 
     // Update is called once per frame
@@ -47,6 +55,8 @@ public class PlayerMovement : MonoBehaviour
 
         rb.linearVelocity = movement * trueSpeed;
         SetAnimatorMovement(movement, previousMovement);
+
+        ConstrainPlayerWithinWheel();
     }
 
     public void OnSprint(InputValue _)
@@ -116,5 +126,18 @@ public class PlayerMovement : MonoBehaviour
 
         animator.SetFloat("InputX", animationX);
         animator.SetFloat("InputY", animationY);
+    }
+
+    private void ConstrainPlayerWithinWheel()
+    {
+        Vector2 playerPosition = rb.position;
+        Vector2 wheelCenterPosition = wheelCenter.position;
+        Vector2 directionFromCenter = playerPosition - wheelCenterPosition;
+
+        if (directionFromCenter.magnitude > wheelRadius)
+        {
+            directionFromCenter = Vector2.ClampMagnitude(directionFromCenter, wheelRadius);
+            rb.position = wheelCenterPosition + directionFromCenter;
+        }
     }
 }
