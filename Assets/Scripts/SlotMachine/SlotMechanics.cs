@@ -1,7 +1,7 @@
 using System.Collections;
 using UnityEngine;
 
-public class SlotBackground : MonoBehaviour
+public class SlotMechanics : MonoBehaviour
 {
 
     [Header("Animators")]
@@ -147,11 +147,5 @@ public class SlotBackground : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        #if DEBUG
-        if(Input.anyKeyDown)
-        {
-            SetReel(1, CherryEvent);
-        }
-        #endif
     }
 }
