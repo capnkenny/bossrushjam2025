@@ -1,19 +1,22 @@
 fileFormatVersion: 2
-guid: 74db4c3c4ab3a4af69248deb5ca04bd1
+guid: 421cb3666f3f74df29d81b56333d285b
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 4964707523264711844
-    second: AttackRight_0
+      213: 8588076794758218427
+    second: CanonBall_0
   - first:
-      213: 2613255630602408828
-    second: AttackRight_1
+      213: -9188485583813395608
+    second: CanonBall_1
   - first:
-      213: -5749968120316236371
-    second: AttackRight_2
+      213: -8749347988473241593
+    second: CanonBall_2
   - first:
-      213: 8138779213086914890
-    second: AttackRight_3
+      213: 9103372673305421784
+    second: CanonBall_3
+  - first:
+      213: 6901617911822551667
+    second: CanonBall_4
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -122,89 +125,111 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: AttackRight_0
+      name: CanonBall_0
       rect:
         serializedVersion: 2
-        x: 21
-        y: 6
-        width: 72
-        height: 72
+        x: 0
+        y: 0
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 4ac07e1303f26e440800000000000000
-      internalID: 4964707523264711844
+      spriteID: bb2c65fd75afe2770800000000000000
+      internalID: 8588076794758218427
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: AttackRight_1
+      name: CanonBall_1
       rect:
         serializedVersion: 2
-        x: 117
-        y: 6
-        width: 72
-        height: 72
+        x: 16
+        y: 0
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: c7398518626244420800000000000000
-      internalID: 2613255630602408828
+      spriteID: 86b31015b01fb7080800000000000000
+      internalID: -9188485583813395608
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: AttackRight_2
+      name: CanonBall_2
       rect:
         serializedVersion: 2
-        x: 212
-        y: 6
-        width: 72
-        height: 72
+        x: 32
+        y: 0
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: dadeabe85720430b0800000000000000
-      internalID: -5749968120316236371
+      spriteID: 70026ca4c52149680800000000000000
+      internalID: -8749347988473241593
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: AttackRight_3
+      name: CanonBall_3
       rect:
         serializedVersion: 2
-        x: 309
-        y: 6
-        width: 72
-        height: 72
+        x: 48
+        y: 0
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: a49f06db290c2f070800000000000000
-      internalID: 8138779213086914890
+      spriteID: 8d72e52f63da55e70800000000000000
+      internalID: 9103372673305421784
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CanonBall_4
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 37a08a9ace877cf50800000000000000
+      internalID: 6901617911822551667
       vertices: []
       indices: 
       edges: []
@@ -213,7 +238,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: e2e3966746c1043d29e0077b2f6fb7cc
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -222,11 +247,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      AttackRight_0: 4964707523264711844
-      AttackRight_1: 2613255630602408828
-      AttackRight_2: -5749968120316236371
-      AttackRight_3: 8138779213086914890
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

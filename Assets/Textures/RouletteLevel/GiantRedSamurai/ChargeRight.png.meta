@@ -123,11 +123,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 10
-        y: 17
+        y: 3
         width: 72
-        height: 41
+        height: 72
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -144,12 +144,12 @@ TextureImporter:
       name: ChargeRight_1
       rect:
         serializedVersion: 2
-        x: 115
-        y: 19
-        width: 66
-        height: 58
+        x: 110
+        y: 3
+        width: 72
+        height: 72
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -166,12 +166,12 @@ TextureImporter:
       name: ChargeRight_2
       rect:
         serializedVersion: 2
-        x: 211
-        y: 19
-        width: 66
-        height: 59
+        x: 205
+        y: 3
+        width: 72
+        height: 72
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -188,7 +188,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: cc2ec74c0cdce4c60bdd5005781733e8
     internalID: 0
     vertices: []
     indices: 
@@ -197,7 +197,10 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      ChargeRight_0: -4954991372413045263
+      ChargeRight_1: 847942935739368495
+      ChargeRight_2: -3361062216834610526
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
