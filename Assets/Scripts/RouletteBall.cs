@@ -16,10 +16,10 @@ public class RouletteBall : MonoBehaviour
     public Transform rouletteWheel;
     public int failedAttempts = 0;
     public const int maxFailedAttempts = 3;
+    public bool isSpinning = true;
     private Rigidbody2D rb;
     private Collider2D ballCollider;
     private Collider2D[] numberColliders;
-    private bool isSpinning = true;
     private bool moveToGreen = false;
     private Vector2 greenPosition;
 
@@ -124,7 +124,7 @@ public class RouletteBall : MonoBehaviour
         }
     }
 
-    void ResetAndSpinBall()
+    public void ResetAndSpinBall()
     {
         Vector2 wheelCenter = rouletteWheel.position;
         Vector2 startPosition = wheelCenter + new Vector2(0, wheelRadius);
