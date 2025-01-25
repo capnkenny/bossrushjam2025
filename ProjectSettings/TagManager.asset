@@ -6,6 +6,9 @@ TagManager:
   tags:
   - SlotMachineTrigger
   - SlotBoss
+  - Land1-Slot
+  - Land2-Slot
+  - Land3-Slot
   layers:
   - Default
   - TransparentFX
