@@ -1,8 +1,8 @@
 using UnityEngine;
-
 public class Red_Samurai_Boss_Behavior : StateMachineBehaviour
 {
     public float moveSpeed = 5f;
+    public bool shouldResetAndSpin = false;
     // private Transform player;
     private Transform rouletteBall;
     private Rigidbody2D rb;
@@ -16,13 +16,14 @@ public class Red_Samurai_Boss_Behavior : StateMachineBehaviour
         rouletteBall = GameObject.FindGameObjectWithTag("Roulette_Ball").transform;
         rb = animator.GetComponent<Rigidbody2D>();
         rouletteBallScript = rouletteBall.GetComponent<RouletteBall>();
-        // hasAttacked = false;
+        hasAttacked = false;
+        shouldResetAndSpin = false;
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        if (!rouletteBallScript.isSpinning)
+        if (!rouletteBallScript.isSpinning && !hasAttacked)
         {
             WalkToRouletteBall(animator);
         }
@@ -32,6 +33,7 @@ public class Red_Samurai_Boss_Behavior : StateMachineBehaviour
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         animator.ResetTrigger("Attack");
+        // animator.SetBool("isWalking", false);
     }
 
     void WalkToRouletteBall(Animator animator)
@@ -52,28 +54,22 @@ public class Red_Samurai_Boss_Behavior : StateMachineBehaviour
 
             if (Vector2.Distance(rb.position, rouletteBall.position) < 1.1f)
             {
+                hasAttacked = true;
+                shouldResetAndSpin = true;
                 animator.SetTrigger("Attack");
                 animator.SetBool("isWalking", false);
-                // hasAttacked = true;
             }
             
         }
     }
 
-    void AttackRouletteBall()
+    public void AttackToResetAndSpinBall()
     {
-        rouletteBallScript.ResetAndSpinBall();
+        if (rouletteBallScript != null)
+        {
+            rouletteBallScript.ResetAndSpinBall();
+            shouldResetAndSpin = false;
+            hasAttacked = false;
+        }
     }
-
-    // OnStateMove is called right after Animator.OnAnimatorMove()
-    //override public void OnStateMove(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
-    //{
-    //    // Implement code that processes and affects root motion
-    //}
-
-    // OnStateIK is called right after Animator.OnAnimatorIK()
-    //override public void OnStateIK(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
-    //{
-    //    // Implement code that sets up animation IK (inverse kinematics)
-    //}
 }
