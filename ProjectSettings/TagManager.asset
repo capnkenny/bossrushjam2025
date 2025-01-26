@@ -9,6 +9,8 @@ TagManager:
   - Land1-Slot
   - Land2-Slot
   - Land3-Slot
+  - Currency
+  - Bullet
   layers:
   - Default
   - TransparentFX
