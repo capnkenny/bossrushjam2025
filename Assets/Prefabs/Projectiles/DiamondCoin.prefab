@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8605809620723782674}
   - component: {fileID: 9153568595779856161}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Diamond
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -100,7 +100,7 @@ GameObject:
   - component: {fileID: 8313890563380116562}
   - component: {fileID: 7872617377711819847}
   - component: {fileID: -5731151723532738041}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: DiamondCoin
   m_TagString: Bullet
   m_Icon: {fileID: 0}

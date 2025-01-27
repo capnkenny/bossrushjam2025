@@ -12,7 +12,6 @@ public class Projectile : MonoBehaviour
     void Start()
     {
         _spawnPoint = transform.position;
-        this.GetComponent<Rigidbody2D>().AddForce(new Vector2(speed * -transform.up.x, speed * -transform.up.y));
     }
 
     void Update()
@@ -22,6 +21,11 @@ public class Projectile : MonoBehaviour
             //gameObject.SetActive(false); <- can convert to reusable bullet array later
         //transform.position = MoveProjectile(_timer);
         _timer += Time.deltaTime;
+    }
+
+    public void Delete()
+    {
+        Destroy(gameObject);
     }
 
     private Vector2 MoveProjectile(float time)
