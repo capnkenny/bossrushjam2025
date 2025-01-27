@@ -16,6 +16,8 @@ TagManager:
   - Roulette 3 Red
   - Roulette 4 Red
   - Roulette 5 Red
+  - Roulette_Wheel
+  - Roulette_Ball
   layers:
   - Default
   - TransparentFX
