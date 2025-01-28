@@ -6,6 +6,7 @@ public class PlayerBattle : MonoBehaviour
     public GameManager gameManager;
     public Animator playerAnimator;
     private bool isHurt = false;
+    private bool oneFrame = false;
 
     void Start()
     {
@@ -18,9 +19,16 @@ public class PlayerBattle : MonoBehaviour
 
     void Update()
     {
-        if(playerAnimator)
+        if(playerAnimator && isHurt)
         {
+            if(oneFrame)
+            {
             playerAnimator.ResetTrigger("Hurt");
+            isHurt = false;
+            oneFrame = false;
+            }
+            else
+            {oneFrame = true;}
         }
     }
 

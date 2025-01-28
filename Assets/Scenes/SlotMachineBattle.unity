@@ -179,11 +179,11 @@ PrefabInstance:
     - target: {fileID: 519464058055439514, guid: 89916867706990e40ab75c9b57b69f34, type: 3}
       propertyPath: ReelTwoAnimator
       value: 
-      objectReference: {fileID: 1953210774}
+      objectReference: {fileID: 927339256}
     - target: {fileID: 519464058055439514, guid: 89916867706990e40ab75c9b57b69f34, type: 3}
       propertyPath: ReelThreeAnimator
       value: 
-      objectReference: {fileID: 1516685196}
+      objectReference: {fileID: 1940864738}
     - target: {fileID: 1714001795000127222, guid: 89916867706990e40ab75c9b57b69f34, type: 3}
       propertyPath: aimPosition.x
       value: 0
@@ -418,7 +418,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 379060349946325225, guid: f5caf5e63623c83498168ddc42d6092b, type: 3}
       propertyPath: m_TagString
-      value: Land1-Slot
+      value: Land2-Slot
       objectReference: {fileID: 0}
     - target: {fileID: 1197247552809745838, guid: f5caf5e63623c83498168ddc42d6092b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1055,6 +1055,11 @@ MonoBehaviour:
   - {x: 0.5, y: -0.5, z: 0}
   - {x: 0.5, y: 0.5, z: 0}
   - {x: -0.5, y: 0.5, z: 0}
+--- !u!95 &927339256 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 7892277060106557010, guid: f5caf5e63623c83498168ddc42d6092b, type: 3}
+  m_PrefabInstance: {fileID: 255748996}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &931478029
 GameObject:
   m_ObjectHideFlags: 0
@@ -1724,7 +1729,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 379060349946325225, guid: f5caf5e63623c83498168ddc42d6092b, type: 3}
       propertyPath: m_TagString
-      value: Land1-Slot
+      value: Land3-Slot
       objectReference: {fileID: 0}
     - target: {fileID: 1197247552809745838, guid: f5caf5e63623c83498168ddc42d6092b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1919,11 +1924,6 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 1862325627267219288, guid: f5caf5e63623c83498168ddc42d6092b, type: 3}
   m_PrefabInstance: {fileID: 1443020572}
-  m_PrefabAsset: {fileID: 0}
---- !u!95 &1516685196 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 3683833442862610162, guid: 89916867706990e40ab75c9b57b69f34, type: 3}
-  m_PrefabInstance: {fileID: 118396056}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1566944561
 GameObject:
@@ -2563,10 +2563,10 @@ MonoBehaviour:
   - {x: 0.5, y: -0.5, z: 0}
   - {x: 0.5, y: 0.5, z: 0}
   - {x: -0.5, y: 0.5, z: 0}
---- !u!95 &1953210774 stripped
+--- !u!95 &1940864738 stripped
 Animator:
-  m_CorrespondingSourceObject: {fileID: 3244691360289124694, guid: 89916867706990e40ab75c9b57b69f34, type: 3}
-  m_PrefabInstance: {fileID: 118396056}
+  m_CorrespondingSourceObject: {fileID: 7892277060106557010, guid: f5caf5e63623c83498168ddc42d6092b, type: 3}
+  m_PrefabInstance: {fileID: 1443020572}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2082814518
 PrefabInstance:
