@@ -20,7 +20,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] public float InitialDifficulty;
     [SerializeField, Range(1f, 10f)] public float DifficultyScale;
 
-    [SerializeField] public UnitHealth _playerHealth = new UnitHealth(5, 5);
+    [SerializeField] public UnitHealth PlayerHealth;
 
     private float _defaultTransitionTime = 3.0f;
 

@@ -13,7 +13,9 @@ public class PlayerHealth : MonoBehaviour
 
     private GameManager gm;
 
-    void Start()
+    private int playerHealth = 5;
+
+    void Awake()
     {
         var list = FindObjectsByType<GameManager>(FindObjectsSortMode.None);
         if (list == null || list.Length == 0)
@@ -22,14 +24,14 @@ public class PlayerHealth : MonoBehaviour
         }
         else
         {
-            gm = (GameManager)list.First();
-
+            gm = list.First();
         }
     }
 
     void Update()
     {
-        int playerHealth = gm._playerHealth.Health;
+        if(gm)
+            playerHealth = gm.PlayerHealth.Health;
         if(playerHealth == 0)
         {
             //gm.GameOver();

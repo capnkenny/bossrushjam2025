@@ -55,7 +55,7 @@ MonoBehaviour:
   CrapsTableSceneIndex: 0
   InitialDifficulty: 0
   DifficultyScale: 1
-  _playerHealth: {fileID: 5282478469071523311}
+  PlayerHealth: {fileID: 5282478469071523311}
 --- !u!114 &5282478469071523311
 MonoBehaviour:
   m_ObjectHideFlags: 0
