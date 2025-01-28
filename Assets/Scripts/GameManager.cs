@@ -63,4 +63,9 @@ public class GameManager : MonoBehaviour
     {
         return PlayerCurrency > 999 ? 999 : PlayerCurrency;
     }
+
+    public void AddToCurrency(int currency)
+    {
+        PlayerCurrency += currency;
+    }
 }

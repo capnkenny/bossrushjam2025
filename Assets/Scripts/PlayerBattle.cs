@@ -63,7 +63,7 @@ public class PlayerBattle : MonoBehaviour
             var proj = obj.GetComponent<Projectile>();
             if(gameManager)
             {
-                //add to currency via gm
+                gameManager.AddToCurrency(1);
             }
             if(obj && proj)
             {
