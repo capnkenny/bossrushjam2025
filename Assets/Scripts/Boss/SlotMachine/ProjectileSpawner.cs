@@ -50,7 +50,9 @@ public class ProjectileSpawner : MonoBehaviour
             comp.speed = projectileSpeed;
             comp.projectileLifetime = projectileLifetime;
             
-            spawned.GetComponent<Rigidbody2D>().AddForce(aimPosition*projectileSpeed*2, ForceMode2D.Impulse);
+            var variance = new Vector3(Random.Range(-0.5f, 0.5f), 0, 0);
+
+            spawned.GetComponent<Rigidbody2D>().AddForce((aimPosition*projectileSpeed*2)+variance, ForceMode2D.Impulse);
             spawnCount++;
         }
     }

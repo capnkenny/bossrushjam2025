@@ -102,7 +102,7 @@ GameObject:
   - component: {fileID: -5731151723532738041}
   m_Layer: 7
   m_Name: DiamondCoin
-  m_TagString: Bullet
+  m_TagString: Projectile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

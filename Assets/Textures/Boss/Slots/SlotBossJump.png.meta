@@ -247,7 +247,12 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      SlotBossJump_0: 8204983400324196660
+      SlotBossJump_1: -2203402102574201096
+      SlotBossJump_2: 3795638634447993464
+      SlotBossJump_3: -7411752910236562676
+      SlotBossJump_4: 2100369678607326019
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

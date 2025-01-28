@@ -10,7 +10,7 @@ TagManager:
   - Land2-Slot
   - Land3-Slot
   - Currency
-  - Bullet
+  - Projectile
   layers:
   - Default
   - TransparentFX
@@ -20,7 +20,7 @@ TagManager:
   - UI
   - Boss
   - Projectile
-  - 
+  - Player
   - 
   - 
   - 
