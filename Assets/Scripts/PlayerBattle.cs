@@ -1,10 +1,15 @@
 using System.Linq;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PlayerBattle : MonoBehaviour
 {
     public GameManager gameManager;
     public Animator playerAnimator;
+    public PlayerSpawner bulletSpawner;
+
+    public bool Allowed = false;
+
     private bool isHurt = false;
     private bool oneFrame = false;
 
@@ -31,6 +36,21 @@ public class PlayerBattle : MonoBehaviour
             {oneFrame = true;}
         }
     }
+
+    void OnAttack(InputValue value)
+    {
+        Allowed = value.isPressed;
+
+        if(Allowed)
+        {
+            bulletSpawner.FiringEnabled = true;
+        }
+        else
+        {
+            bulletSpawner.FiringEnabled = false;
+        }
+    }
+    
 
     void OnCollisionEnter2D(Collision2D collision)
     {
@@ -71,4 +91,6 @@ public class PlayerBattle : MonoBehaviour
             }
         }
     }
+
+    
 }

@@ -48,6 +48,7 @@ public class SlotBossStillJump : StateMachineBehaviour
         }
 		
         animator.transform.position = nextPos;
+        Debug.Log("Boss pos: "+animator.transform.position);
     }
 
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)

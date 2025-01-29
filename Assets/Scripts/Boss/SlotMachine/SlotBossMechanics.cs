@@ -104,14 +104,17 @@ public class SlotBossMechanics : MonoBehaviour
     {
         if(collision.gameObject.tag == "PlayerProjectile")
         {
+            var proj = collision.gameObject.GetComponent<Projectile>();
             if(BossHealth)
             {
-                var proj = collision.gameObject.GetComponent<Projectile>();
                 if(proj)
                     BossHealth.DmgUnit(proj.DamageValue);
                 else
                     BossHealth.DmgUnit(1);
             }
+
+            if(proj)
+                proj.Delete();
         }
     }
 }
