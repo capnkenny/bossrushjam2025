@@ -13,6 +13,8 @@ public class PlayerBattle : MonoBehaviour
     private bool isHurt = false;
     private bool oneFrame = false;
 
+    private InputAction attackAction;
+
     void Start()
     {
         var list = FindObjectsByType<GameManager>(FindObjectsSortMode.None);
@@ -20,6 +22,8 @@ public class PlayerBattle : MonoBehaviour
         {
             gameManager = (GameManager)list.First();
         }
+
+        attackAction = InputSystem.actions.FindAction("Attack");
     }
 
     void Update()
@@ -35,20 +39,8 @@ public class PlayerBattle : MonoBehaviour
             else
             {oneFrame = true;}
         }
-    }
-
-    void OnAttack(InputValue value)
-    {
-        Allowed = value.isPressed;
-
-        if(Allowed)
-        {
-            bulletSpawner.FiringEnabled = true;
-        }
-        else
-        {
-            bulletSpawner.FiringEnabled = false;
-        }
+        
+        bulletSpawner.FiringEnabled = attackAction.IsPressed();
     }
     
 

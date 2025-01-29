@@ -59,7 +59,7 @@ public class PlayerSpawner : MonoBehaviour
 
     private void FireProjectile()
     {
-        if(Projectile && spawnCount < OutputLimit)
+        if(Projectile)
         {
             var pos = transform.position - new Vector3(0,1,0);
             switch(PowerUpMode)
@@ -106,7 +106,6 @@ public class PlayerSpawner : MonoBehaviour
             var variance = new Vector3(Random.Range(-0.5f, 0.5f), 0, 0);
 
             spawned.GetComponent<Rigidbody2D>().AddForce((aimPosition*comp.speed*2)+variance, ForceMode2D.Impulse);
-            spawnCount++;
         }
     }
 
