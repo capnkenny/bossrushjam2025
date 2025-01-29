@@ -5,6 +5,7 @@ public class Projectile : MonoBehaviour
 {
     public float projectileLifetime = 1f;
     public float speed = 1f;
+    public int DamageValue = 1;
 
     private Vector3 _spawnPoint;
     private float _timer = 0f;

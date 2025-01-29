@@ -37,6 +37,23 @@ public class Reel : MonoBehaviour
     public float sevenSpeed = 20f;
 
 
+    public void ResetAndFreeze()
+    {
+        Reset();
+        if(EmitterLeft)
+        {
+            EmitterLeft.Frozen = true;
+        }
+        if(EmitterCenter)
+        {
+            EmitterCenter.Frozen = true;
+        }
+        if(EmitterRight)
+        {
+            EmitterRight.Frozen = true;
+        }
+    }
+
     public void Reset()
     {
         if(EmitterLeft)
@@ -175,6 +192,7 @@ public class Reel : MonoBehaviour
             EmitterLeft.projectileSpeed = sevenSpeed;
             EmitterCenter.PowerupEnabled = true;
             EmitterLeft.FiringEnabled = true;
+
         }
         if(EmitterCenter)
         {
