@@ -290,6 +290,8 @@ MonoBehaviour:
   particles2: {fileID: 6655938909060166985}
   source: {fileID: 7653063026636876320}
   explosionClip: {fileID: 8300000, guid: 22712a1ce8eae464885108c01765ea22, type: 3}
+  dispenseClip: {fileID: 8300000, guid: efe43e39acd036c408047acbf11e8a6b, type: 3}
+  dispenseWaitInSeconds: 0.1
   cocoFiringRate: 0.25
   cocoLifetime: 5
   cocoSpeed: 20

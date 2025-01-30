@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Linq;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class SlotBossMechanics : MonoBehaviour
@@ -12,9 +13,9 @@ public class SlotBossMechanics : MonoBehaviour
     public Animator ReelThreeAnimator;
     public Material bossMaterial;
     public SpriteRenderer bossSprite;
+    public AudioClip jumpClip;
+    public AudioSource source;
 
-    private bool isHurt = false;
-    private bool oneFrame = false;
 
     public int oneSixthHealth = 150;
     public int oneThirdHealth = 334;
@@ -98,7 +99,12 @@ public class SlotBossMechanics : MonoBehaviour
         }
         else if(dead)
         {
-            //stop anims and everything else
+            if(deadTriggered)
+            {
+                Vector3 vec = transform.position;
+                vec.y -= 20 * Time.deltaTime;
+                transform.position = vec;
+            }
         }
     }
 
@@ -160,13 +166,22 @@ public class SlotBossMechanics : MonoBehaviour
                 c.a);
     }
 
+    public void PlayJumpSound()
+    {
+        if(jumpClip && source)
+        {
+            source.PlayOneShot(jumpClip);
+        }
+    }
+
     public IEnumerator DeathAnim()
     {
         bossSprite.color = origColor;
         bossAnimator.SetBool("Dead", true);
         bossAnimator.Play("Idle");
         bossAnimator.StopPlayback();
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(1.0f);
+        deadTriggered = true;
     }
 
 }
