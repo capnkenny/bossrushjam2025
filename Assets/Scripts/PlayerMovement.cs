@@ -65,7 +65,7 @@ public class PlayerMovement : MonoBehaviour
         rb.linearVelocity = trueMovement * trueSpeed;
         SetAnimatorMovement(movement, previousMovement);
 
-        ConstrainPlayerWithinWheel();
+        // ConstrainPlayerWithinWheel();
     }
 
     public void OnSprint(InputValue _)
@@ -79,6 +79,18 @@ public class PlayerMovement : MonoBehaviour
     {
         previousMovement = movement;
         movement = value.Get<Vector2>();
+    }
+
+    public void IncreaseMovementSpeed(int amount)
+    {
+        moveSpeed += amount;
+        Debug.Log("Player movement speed increased");
+    }
+
+    public void DecreaseMovementSpeed(int amount)
+    {
+        moveSpeed = Mathf.Max(1f, moveSpeed - amount); // Decrease movement speed by 1, but not below 1
+        Debug.Log("Player movement speed decreased");
     }
 
     private void SetAnimatorMovement(Vector2 movementValue, Vector2 previousValue)
