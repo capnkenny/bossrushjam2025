@@ -12,8 +12,6 @@ public class RouletteRoom : MonoBehaviour
     {
         rouletteBall = GameObject.FindGameObjectWithTag("Roulette_Ball").transform;
         rouletteBallScript = rouletteBall.GetComponent<RouletteBall>();
-
-        LogChildLocalPositions();
     }
 
     // Update is called once per frame
@@ -30,14 +28,6 @@ public class RouletteRoom : MonoBehaviour
     {
         isBallSpinning = true;
         // Add logic to start the ball spinning if needed
-    }
-
-    void LogChildLocalPositions()
-    {
-        foreach (Transform child in transform)
-        {
-            Debug.Log($"Child {child.name} local position: {child.localPosition}");
-        }
     }
 
     // Method to stop the ball spin and room rotation
