@@ -18,6 +18,12 @@ TagManager:
   - Roulette 5 Red
   - Roulette_Wheel
   - Roulette_Ball
+  - SlotBoss
+  - Land1-Slot
+  - Land2-Slot
+  - Land3-Slot
+  - Currency
+  - Projectile
   layers:
   - Default
   - TransparentFX
@@ -25,9 +31,10 @@ TagManager:
   - 
   - Water
   - UI
-  - Player
   - Roulette
-  - 
+  - Boss
+  - Projectile
+  - Player
   - 
   - 
   - 
@@ -52,6 +59,9 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: SlotMachineLayer
+    uniqueID: 2764781201
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0

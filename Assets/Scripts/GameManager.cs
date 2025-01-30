@@ -19,6 +19,8 @@ public class GameManager : MonoBehaviour
     [Header("Game Mechanics")]
     [SerializeField] public float InitialDifficulty;
     [SerializeField, Range(1f, 10f)] public float DifficultyScale;
+    [SerializeField] public UnitHealth PlayerHealth;
+    [SerializeField] private int PlayerCurrency;
 
     private float _defaultTransitionTime = 3.0f;
 
@@ -55,5 +57,15 @@ public class GameManager : MonoBehaviour
         Debug.Log($"Scene requested immediately - id: {index}");
         
         SceneManager.LoadScene(index);
+    }
+
+    public int GetPlayerCurrency()
+    {
+        return PlayerCurrency > 999 ? 999 : PlayerCurrency;
+    }
+
+    public void AddToCurrency(int currency)
+    {
+        PlayerCurrency += currency;
     }
 }

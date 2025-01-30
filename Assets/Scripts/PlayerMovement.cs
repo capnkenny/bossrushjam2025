@@ -9,6 +9,9 @@ public class PlayerMovement : MonoBehaviour
     
     [SerializeField] private Animator animator;
     [SerializeField] private float animationSmoothingValue;
+    [SerializeField] private bool BattleMode;
+    [SerializeField] private bool RestrictXMovement;
+    [SerializeField] private bool RestrictYMovement;
     
     [Header("FOR VISIBILITY ONLY")]
     [SerializeField]private Vector2 movement;
@@ -53,7 +56,13 @@ public class PlayerMovement : MonoBehaviour
         else if (!isRunning && trueSpeed >= halfSpeed)
             trueSpeed = halfSpeed;
 
-        rb.linearVelocity = movement * trueSpeed;
+        var trueMovement = movement;
+        if(RestrictXMovement)
+            trueMovement.x = 0;
+        if(RestrictYMovement)
+            trueMovement.y = 0;
+
+        rb.linearVelocity = trueMovement * trueSpeed;
         SetAnimatorMovement(movement, previousMovement);
 
         ConstrainPlayerWithinWheel();
@@ -62,7 +71,8 @@ public class PlayerMovement : MonoBehaviour
     public void OnSprint(InputValue _)
     {
         //Creates a "toggle" effect for running
-        isRunning = !isRunning;
+        if(!BattleMode)
+            isRunning = !isRunning;
     }
 
     public void OnMove(InputValue value)
