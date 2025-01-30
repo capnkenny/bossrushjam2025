@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4086370488490405826}
   - component: {fileID: 3430909879048883097}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Light 2D
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -100,6 +100,10 @@ PrefabInstance:
       propertyPath: m_UseAutoMass
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -5731151723532738041, guid: b8e42b62ea9d45446a39eb2c43d268e3, type: 3}
+      propertyPath: m_ExcludeLayers.m_Bits
+      value: 128
+      objectReference: {fileID: 0}
     - target: {fileID: 216350228621923190, guid: b8e42b62ea9d45446a39eb2c43d268e3, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -146,7 +150,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2029033460097873661, guid: b8e42b62ea9d45446a39eb2c43d268e3, type: 3}
       propertyPath: m_Layer
-      value: 0
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 4894009604570790362, guid: b8e42b62ea9d45446a39eb2c43d268e3, type: 3}
       propertyPath: m_Name
@@ -154,7 +158,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4894009604570790362, guid: b8e42b62ea9d45446a39eb2c43d268e3, type: 3}
       propertyPath: m_Layer
-      value: 0
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 4894009604570790362, guid: b8e42b62ea9d45446a39eb2c43d268e3, type: 3}
       propertyPath: m_TagString

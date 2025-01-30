@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class Reel : MonoBehaviour
@@ -5,6 +6,12 @@ public class Reel : MonoBehaviour
     public ProjectileSpawner EmitterLeft;
     public ProjectileSpawner EmitterCenter;
     public ProjectileSpawner EmitterRight;
+    public ParticleSystem particles;
+    public ParticleSystem particles2;
+    public AudioSource source;
+    public AudioClip explosionClip;
+    public AudioClip dispenseClip;
+    public float dispenseWaitInSeconds = 0.1f;
 
     [Header("Coconut Properties")]
     public float cocoFiringRate = 0.250f;
@@ -36,6 +43,29 @@ public class Reel : MonoBehaviour
     public float sevenLifetime = 5f;
     public float sevenSpeed = 20f;
 
+
+    public void ResetAndFreeze()
+    {
+        Reset();
+        if(EmitterLeft)
+        {
+            EmitterLeft.Frozen = true;
+        }
+        if(EmitterCenter)
+        {
+            EmitterCenter.Frozen = true;
+        }
+        if(EmitterRight)
+        {
+            EmitterRight.Frozen = true;
+        }
+        if(particles && particles2)
+        {
+            particles.Play();
+            particles2.Play();
+            source.PlayOneShot(explosionClip);
+        }
+    }
 
     public void Reset()
     {
@@ -71,6 +101,7 @@ public class Reel : MonoBehaviour
             EmitterCenter.projectileLifetime = cocoLifetime;
             EmitterCenter.projectileSpeed = cocoSpeed;
             EmitterCenter.FiringEnabled = true;
+            StartCoroutine(PlayDispenseSound());
         }
         if(EmitterRight)
         {
@@ -89,6 +120,7 @@ public class Reel : MonoBehaviour
             EmitterCenter.projectileLifetime = barLifetime;
             EmitterCenter.projectileSpeed = barSpeed;
             EmitterCenter.FiringEnabled = true;
+            StartCoroutine(PlayDispenseSound());
         }
     }
 
@@ -101,6 +133,7 @@ public class Reel : MonoBehaviour
             EmitterLeft.projectileSpeed = diaSpeed;
             EmitterLeft.PowerupEnabled = true;
             EmitterLeft.FiringEnabled = true;
+            StartCoroutine(PlayDispenseSound());
         }
         if(EmitterRight)
         {
@@ -120,6 +153,7 @@ public class Reel : MonoBehaviour
             EmitterLeft.projectileLifetime = bellLifetime;
             EmitterLeft.projectileSpeed = bellSpeed;
             EmitterLeft.FiringEnabled = true;
+            StartCoroutine(PlayDispenseSound());
         }
         if(EmitterCenter)
         {
@@ -155,6 +189,7 @@ public class Reel : MonoBehaviour
             EmitterCenter.projectileSpeed = cherrySpeed;
             EmitterCenter.PowerupEnabled = true;
             EmitterCenter.FiringEnabled = true;
+            StartCoroutine(PlayDispenseSound());
         }
         if(EmitterRight)
         {
@@ -175,6 +210,7 @@ public class Reel : MonoBehaviour
             EmitterLeft.projectileSpeed = sevenSpeed;
             EmitterCenter.PowerupEnabled = true;
             EmitterLeft.FiringEnabled = true;
+
         }
         if(EmitterCenter)
         {
@@ -183,6 +219,7 @@ public class Reel : MonoBehaviour
             EmitterCenter.projectileSpeed = sevenSpeed;
             EmitterCenter.PowerupEnabled = true;
             EmitterCenter.FiringEnabled = true;
+            StartCoroutine(PlayDispenseSound());
         }
         if(EmitterRight)
         {
@@ -192,6 +229,24 @@ public class Reel : MonoBehaviour
             EmitterCenter.PowerupEnabled = true;
             EmitterRight.FiringEnabled = true;
         }
+    }
+
+    public IEnumerator PlayDispenseSound()
+    {
+        source.PlayOneShot(dispenseClip);
+        yield return new WaitForSeconds(dispenseWaitInSeconds);
+        source.PlayOneShot(dispenseClip);
+        yield return new WaitForSeconds(dispenseWaitInSeconds);
+        source.PlayOneShot(dispenseClip);
+        yield return new WaitForSeconds(dispenseWaitInSeconds);
+        source.PlayOneShot(dispenseClip);
+        yield return new WaitForSeconds(dispenseWaitInSeconds);
+        source.PlayOneShot(dispenseClip);
+        yield return new WaitForSeconds(dispenseWaitInSeconds);
+        source.PlayOneShot(dispenseClip);
+        yield return new WaitForSeconds(dispenseWaitInSeconds);
+        source.PlayOneShot(dispenseClip);
+        yield return new WaitForSeconds(dispenseWaitInSeconds);
     }
 
 }

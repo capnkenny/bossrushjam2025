@@ -15,6 +15,7 @@ public class ProjectileSpawner : MonoBehaviour
     public float firingRate = 1f;
     public Vector3 aimPosition = Vector3.zero;
     public int OutputLimit = 8;
+    public bool Frozen = false;
     
 
     private GameObject spawned;
@@ -23,7 +24,7 @@ public class ProjectileSpawner : MonoBehaviour
 
     void Update()
     {
-        if(FiringEnabled)
+        if(FiringEnabled && !Frozen)
         {
             timer += Time.deltaTime;
             if(timer >= firingRate)

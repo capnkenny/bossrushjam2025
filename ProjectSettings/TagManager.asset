@@ -11,6 +11,7 @@ TagManager:
   - Land3-Slot
   - Currency
   - Projectile
+  - PlayerProjectile
   layers:
   - Default
   - TransparentFX

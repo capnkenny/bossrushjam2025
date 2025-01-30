@@ -24,7 +24,7 @@ public class SlotBossIdleAttack : StateMachineBehaviour
       {
        passedTime += Time.deltaTime;
 
-       if(passedTime >= timeToWait)
+       if(passedTime >= timeToWait && !animator.GetBool("Dead"))
        {
           int trigger = Random.Range(0, triggersToLaunch.Count);
           animator.SetTrigger(triggersToLaunch[trigger]);
