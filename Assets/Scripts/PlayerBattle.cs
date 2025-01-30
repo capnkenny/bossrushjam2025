@@ -44,7 +44,8 @@ public class PlayerBattle : MonoBehaviour
             {oneFrame = true;}
         }
         
-        bulletSpawner.FiringEnabled = attackAction.IsPressed();
+        if(bulletSpawner)
+            bulletSpawner.FiringEnabled = attackAction.IsPressed();
     }
     
 

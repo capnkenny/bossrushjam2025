@@ -4,8 +4,9 @@ using UnityEngine;
 public class SlotLevelMgr : MonoBehaviour
 {
     public GameManager gm;
-    public UnitHealth playerHeath;
+    public UnitHealth playerHealth;
     public SlotBossMechanics bossMechs;
+    public Animator ExitLevelAnimator;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -19,6 +20,7 @@ public class SlotLevelMgr : MonoBehaviour
         if(gm)
         {
             gm.InGame = true;
+            playerHealth = gm.PlayerHealth;
         }
     }
 
@@ -27,11 +29,11 @@ public class SlotLevelMgr : MonoBehaviour
     {
         if(bossMechs && bossMechs.dead)
         {
-            //Move along to next level.
             gm.LevelOneComplete = true;
+            ExitLevelAnimator.SetTrigger("Appear");
         }
 
-        if(playerHeath && playerHeath._currentHealth == 0)
+        if(playerHealth && playerHealth._currentHealth == 0)
         {
             //game over screen
         }

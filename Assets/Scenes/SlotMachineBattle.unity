@@ -769,7 +769,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gm: {fileID: 0}
   playerHeath: {fileID: 0}
-  bossMechs: {fileID: 0}
+  bossMechs: {fileID: 1183492364}
 --- !u!4 &891572231
 Transform:
   m_ObjectHideFlags: 0
@@ -1462,6 +1462,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cd5e2b74d2d87104997d65157f000929, type: 3}
+--- !u!114 &1183492364 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7553426679302329889, guid: cd5e2b74d2d87104997d65157f000929, type: 3}
+  m_PrefabInstance: {fileID: 1183492363}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4e7293566a9cbe4b97802b26eb8b190, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1242082076
 GameObject:
   m_ObjectHideFlags: 0
