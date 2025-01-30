@@ -31,11 +31,7 @@ public class Red_Samurai_Boss_Behavior : StateMachineBehaviour
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        if (isWaiting)
-        {
-            FollowAndAttackPlayer(animator);
-        }
-        else if (!rouletteBallScript.isSpinning && !hasAttacked)
+        if (!rouletteBallScript.isSpinning && !hasAttacked)
         {
             WalkToRouletteBall(animator);
         }
@@ -100,5 +96,23 @@ public class Red_Samurai_Boss_Behavior : StateMachineBehaviour
             shouldResetAndSpin = false;
             hasAttacked = false;
         }
+    }
+
+    public void IncreaseMovementSpeed(int amount)
+    {
+        moveSpeed += amount;
+        Debug.Log("Boss movement speed increased");
+    }
+
+    public void DecreaseMovementSpeed(int amount)
+    {
+        moveSpeed = Mathf.Max(1f, moveSpeed - amount); // Decrease movement speed by 1, but not below 1
+        Debug.Log("Boss movement speed decreased");
+    }
+
+    public void TriggerHurtAnimation(Animator animator)
+    {
+        animator.SetTrigger("Hurt");
+        Debug.Log("Boss hurt animation triggered");
     }
 }
