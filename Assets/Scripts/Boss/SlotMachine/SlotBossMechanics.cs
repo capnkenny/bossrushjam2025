@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Linq;
 using UnityEngine;
 
@@ -9,20 +10,24 @@ public class SlotBossMechanics : MonoBehaviour
     public Animator ReelOneAnimator;
     public Animator ReelTwoAnimator;
     public Animator ReelThreeAnimator;
+    public Material bossMaterial;
+    public SpriteRenderer bossSprite;
+
     private bool isHurt = false;
     private bool oneFrame = false;
 
-    private int oneSixthHealth = 150;
-    private int oneThirdHealth = 334;
-    private int twoThirdsHealth = 667;
+    public int oneSixthHealth = 150;
+    public int oneThirdHealth = 334;
+    public int twoThirdsHealth = 667;
 
     private bool veryHurt = false;
     private bool critHurt = false;
-    private bool dead = false;
+    public bool dead = false;
     private bool veryHurtTriggered = false;
     private bool critHurtTriggered = false;
     private bool almostDeadTriggered = false;
     private bool deadTriggered = false;
+    private Color origColor;
 
 
     void Start()
@@ -38,26 +43,20 @@ public class SlotBossMechanics : MonoBehaviour
             oneThirdHealth = BossHealth._currentHealth / 3;
             twoThirdsHealth = oneThirdHealth * 2;
             oneSixthHealth = oneThirdHealth / 2;
+            Debug.Log("Boss values: "+ oneThirdHealth + " " + twoThirdsHealth + " " + oneSixthHealth + " ");
         }
+        origColor = bossSprite.color;
     }
 
     void Update()
     {
+        if(bossMaterial)
+        {
+            bossMaterial.SetFloat("_Noise", Random.Range(67.0f, 200f));
+        }
         CheckIfHurt();
 
-        // if(bossAnimator && isHurt)
-        // {
-        //     if(oneFrame)
-        //     {
-        //         bossAnimator.ResetTrigger("Hurt");
-        //         isHurt = false;
-        //         oneFrame = false;
-        //     }
-        //     else
-        //     {
-        //         oneFrame = true;
-        //     }
-        // }
+        
     }
 
     private void CheckIfHurt()
@@ -65,38 +64,41 @@ public class SlotBossMechanics : MonoBehaviour
         if(!veryHurt && BossHealth._currentHealth <= twoThirdsHealth)
         {
             veryHurt = true;
-            bossAnimator.SetTrigger("Hurt");
+            StartCoroutine(HurtAnim());
             ReelOneAnimator.SetTrigger("Lucky7");
         }
         else if (veryHurt && !critHurt)
         {
-            if(!veryHurtTriggered)
-                veryHurtTriggered = true;
-
             if(BossHealth._currentHealth <= oneThirdHealth)
             {
                 critHurt = true;
-                bossAnimator.SetTrigger("Hurt");
+                StartCoroutine(HurtAnim());
                 ReelThreeAnimator.SetTrigger("Lucky7");
             }
+            if(!veryHurtTriggered)
+                veryHurtTriggered = true;
+
         }
         else if (veryHurt && critHurt)
         {
-            if(!critHurtTriggered)
-                critHurtTriggered = true;
-
             if(BossHealth._currentHealth <= oneSixthHealth && BossHealth._currentHealth > 0)
             {
                 ReelTwoAnimator.SetTrigger("Lucky7");
-                bossAnimator.SetTrigger("Hurt");
+                StartCoroutine(HurtAnim());
                 almostDeadTriggered = true;
             }
             else if(!dead)
             {
-                bossAnimator.SetTrigger("Dead");
                 dead = true;
+                StartCoroutine(DeathAnim());
             }
 
+            if(!critHurtTriggered)
+                critHurtTriggered = true;
+        }
+        else if(dead)
+        {
+            //stop anims and everything else
         }
     }
 
@@ -117,4 +119,54 @@ public class SlotBossMechanics : MonoBehaviour
                 proj.Delete();
         }
     }
+
+    public IEnumerator HurtAnim()
+    {
+        Debug.Log("Hurting boss...");
+        if(critHurt && !critHurtTriggered)
+        {
+            bossMaterial.SetInt("ApplyEffect", 1);
+        }
+
+        Color c = bossSprite.color;
+        bossSprite.color = Color.red;
+        yield return new WaitForSeconds(0.25f);
+        bossSprite.color = Color.black;
+        yield return new WaitForSeconds(0.25f);
+        bossSprite.color = c;
+        yield return new WaitForSeconds(0.25f);
+        bossSprite.color = Color.red;
+        yield return new WaitForSeconds(0.25f);
+        bossSprite.color = Color.black;
+        yield return new WaitForSeconds(0.25f);
+        bossSprite.color = c;
+        yield return new WaitForSeconds(0.25f);
+        bossSprite.color = Color.red;
+        yield return new WaitForSeconds(0.25f);
+        bossSprite.color = Color.black;
+        yield return new WaitForSeconds(0.25f);
+        bossSprite.color = c;
+        yield return new WaitForSeconds(0.25f);
+        bossSprite.color = Color.red;
+        yield return new WaitForSeconds(0.25f);
+        bossSprite.color = Color.black;
+        yield return new WaitForSeconds(0.25f);
+        if(!almostDeadTriggered)
+            bossSprite.color = c;
+        else
+            bossSprite.color = new Color(c.r + Random.Range(c.r-100, c.r+100), 
+                0,
+                0,
+                c.a);
+    }
+
+    public IEnumerator DeathAnim()
+    {
+        bossSprite.color = origColor;
+        bossAnimator.SetBool("Dead", true);
+        bossAnimator.Play("Idle");
+        bossAnimator.StopPlayback();
+        yield return new WaitForSeconds(0.5f);
+    }
+
 }
