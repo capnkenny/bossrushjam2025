@@ -5,6 +5,10 @@ public class Reel : MonoBehaviour
     public ProjectileSpawner EmitterLeft;
     public ProjectileSpawner EmitterCenter;
     public ProjectileSpawner EmitterRight;
+    public ParticleSystem particles;
+    public ParticleSystem particles2;
+    public AudioSource source;
+    public AudioClip explosionClip;
 
     [Header("Coconut Properties")]
     public float cocoFiringRate = 0.250f;
@@ -51,6 +55,12 @@ public class Reel : MonoBehaviour
         if(EmitterRight)
         {
             EmitterRight.Frozen = true;
+        }
+        if(particles && particles2)
+        {
+            particles.Play();
+            particles2.Play();
+            source.PlayOneShot(explosionClip);
         }
     }
 

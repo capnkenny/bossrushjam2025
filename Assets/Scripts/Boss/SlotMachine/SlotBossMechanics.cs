@@ -91,7 +91,7 @@ public class SlotBossMechanics : MonoBehaviour
                 bossAnimator.SetTrigger("Hurt");
                 almostDeadTriggered = true;
             }
-            else
+            else if(!dead)
             {
                 bossAnimator.SetTrigger("Dead");
                 dead = true;

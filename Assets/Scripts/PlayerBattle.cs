@@ -7,6 +7,10 @@ public class PlayerBattle : MonoBehaviour
     public GameManager gameManager;
     public Animator playerAnimator;
     public PlayerSpawner bulletSpawner;
+    
+    public AudioSource audioSource;
+    public AudioClip coinPickup;
+
 
     public bool Allowed = false;
 
@@ -80,6 +84,10 @@ public class PlayerBattle : MonoBehaviour
             if(obj && proj)
             {
                 proj.Delete();
+            }
+            if(audioSource && coinPickup)
+            {
+                audioSource.PlayOneShot(coinPickup);
             }
         }
     }

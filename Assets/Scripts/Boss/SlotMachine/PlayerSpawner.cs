@@ -7,27 +7,32 @@ public class PlayerSpawner : MonoBehaviour
 
     public float projectileLifetime = 1f;
     public float projectileSpeed = 1f;
+    public AudioClip projectileClip;
 
     [Header("Power Up One")]
     public GameObject PowerUpOne;
     public float projectileLifetimePUO = 1f;
     public float projectileSpeedPUO = 1f;
     public int projectileDamagePUO = 1;
+    public AudioClip projectileClipPUO;
 
     [Header("Power Up Two")]
     public GameObject PowerUpTwo;
     public float projectileLifetimePUT = 1f;
     public float projectileSpeedPUT = 1f;
     public int projectileDamagePUT = 1;
+    public AudioClip projectileClipPUT;
 
     [Header("Power Up Three")]
     public GameObject PowerUpThree;
     public float projectileLifetimePUTH = 1f;
     public float projectileSpeedPUTH = 1f;
     public int projectileDamagePUTH = 1;
+    public AudioClip projectileClipPUTH;
     
     [Header("Spawner Vars")]
     public bool FiringEnabled = false;
+    public AudioSource audioSource;
     public int PowerUpMode = 0;
     public float firingRate = 1f;
     public Vector3 aimPosition = Vector3.zero;
@@ -66,15 +71,19 @@ public class PlayerSpawner : MonoBehaviour
             {
                 case 1:
                     spawned = Instantiate(PowerUpOne, pos, Quaternion.identity);
+                    audioSource.PlayOneShot(projectileClipPUO);
                     break;
                 case 2:
                     spawned = Instantiate(PowerUpTwo, pos, Quaternion.identity);
+                    audioSource.PlayOneShot(projectileClipPUT);
                     break;
                 case 3:
                     spawned = Instantiate(PowerUpThree, pos, Quaternion.identity);
+                    audioSource.PlayOneShot(projectileClipPUTH);
                     break;
                 default:
                     spawned = Instantiate(Projectile, pos, Quaternion.identity);
+                    audioSource.PlayOneShot(projectileClip);
                     break;
             }
             
