@@ -39,8 +39,21 @@ public class PlayerMovement : MonoBehaviour
         int rouletteLayer = LayerMask.NameToLayer("Roulette");
         Physics2D.IgnoreLayerCollision(playerLayer, rouletteLayer, true);
 
-        rouletteBall = GameObject.FindGameObjectWithTag("Roulette_Ball").transform;
-        rouletteBallScript = rouletteBall.GetComponent<RouletteBall>();
+        GameObject rouletteBallObject = GameObject.FindGameObjectWithTag("Roulette_Ball");
+        if (rouletteBallObject != null)
+        {
+            rouletteBall = rouletteBallObject.transform;
+            rouletteBallScript = rouletteBall.GetComponent<RouletteBall>();
+
+            if (rouletteBallScript == null)
+            {
+                Debug.LogWarning("RouletteBall script not found on the Roulette_Ball GameObject.");
+            }
+        }
+        else
+        {
+            Debug.LogWarning("Roulette_Ball GameObject not found.");
+        }
     }
 
     // Update is called once per frame
@@ -69,9 +82,17 @@ public class PlayerMovement : MonoBehaviour
         if (Keyboard.current.spaceKey.wasPressedThisFrame)
         {
             animator.SetTrigger("Attack");
-            if (Vector2.Distance(rb.position, rouletteBall.position) < 2f)
+
+            if (rouletteBall != null && rouletteBallScript != null)
             {
-                rouletteBallScript.ResetAndSpinBall(true);
+                if (Vector2.Distance(rb.position, rouletteBall.position) < 2f)
+                {
+                    rouletteBallScript.ResetAndSpinBall(true);
+                }
+            }
+            else
+            {
+                Debug.LogWarning("rouletteBall or rouletteBallScript is null.");
             }
         }
     }
