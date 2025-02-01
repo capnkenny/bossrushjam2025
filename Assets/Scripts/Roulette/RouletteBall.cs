@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections;
 using System.Threading.Tasks;
+using System.Linq;
 
 public class RouletteBall : MonoBehaviour
 {
@@ -28,6 +29,8 @@ public class RouletteBall : MonoBehaviour
     private Animator animator;
     private Animator bossAnimator;
     private Animator playerAnimator;
+    private GameManager gameManager;
+    private UnitHealth bossHealth;
 
     void Start()
     {
@@ -42,10 +45,18 @@ public class RouletteBall : MonoBehaviour
         }
 
         bossAnimator = GameObject.FindGameObjectWithTag("RouletteBoss").GetComponent<Animator>();
+        bossHealth = GameObject.FindGameObjectWithTag("RouletteBoss").GetComponent<UnitHealth>();
         boss = bossAnimator.GetBehaviour<Red_Samurai_Boss_Behavior>();
+
 
         playerAnimator = GameObject.FindGameObjectWithTag("Player").GetComponent<Animator>();
         player = FindObjectOfType<PlayerMovement>();
+
+        var list = FindObjectsByType<GameManager>(FindObjectsSortMode.None);
+        if (list != null && list.Length != 0)
+        {
+            gameManager = (GameManager)list.First();
+        }
 
         Vector2 initialDirection = new Vector2(0,1).normalized;
         rb.AddForce(initialDirection * initialForce, ForceMode2D.Impulse);
@@ -282,11 +293,18 @@ public class RouletteBall : MonoBehaviour
             if (playerHit)
             {
                 bossAnimator.SetTrigger("Hurt");
-                Debug.Log("Boss hurt");
+                bossHealth.DmgUnit(1);
+                Debug.Log("Boss hurt, Current Health: " + bossHealth._currentHealth);
+                if (bossHealth._currentHealth == 0)
+                {
+                    gameManager.LoadLevelImmediate(2);
+                    Debug.Log("Boss defeated");
+                }
             }
             else
             {
                 playerAnimator.SetTrigger("Hurt");
+                gameManager.PlayerHealth.DmgUnit(1);
                 Debug.Log("Player hurt");
             }
             player.ResetMoveSpeed();

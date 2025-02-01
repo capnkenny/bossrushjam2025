@@ -742,6 +742,7 @@ GameObject:
   - component: {fileID: 169732601}
   - component: {fileID: 169732602}
   - component: {fileID: 169732603}
+  - component: {fileID: 169732604}
   m_Layer: 0
   m_Name: Red_Samurai
   m_TagString: RouletteBoss
@@ -898,6 +899,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7b4b33229cc849d19bdaae18fc498b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &169732604
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 169732597}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9f0c5ccde31eed41abf918ee68d7595, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _currentHealth: 1
+  _currentMaxHealth: 5
 --- !u!1 &180292455
 GameObject:
   m_ObjectHideFlags: 0
