@@ -11,7 +11,6 @@ public class PlayerBattle : MonoBehaviour
     public AudioSource audioSource;
     public AudioClip coinPickup;
 
-
     public bool Allowed = false;
 
     private bool isHurt = false;
@@ -32,6 +31,11 @@ public class PlayerBattle : MonoBehaviour
 
     void Update()
     {
+        if(gameManager)
+        {
+            bulletSpawner.PowerUpMode = gameManager.PlayerPowerUpMode;
+        }
+
         if(playerAnimator && isHurt)
         {
             if(oneFrame)

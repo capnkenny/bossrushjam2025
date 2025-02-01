@@ -21,6 +21,8 @@ public class GameManager : MonoBehaviour
     [SerializeField, Range(1f, 10f)] public float DifficultyScale;
     [SerializeField] public UnitHealth PlayerHealth;
     [SerializeField] private int PlayerCurrency;
+    [SerializeField] public int PlayerPowerUpMode;
+
     public bool LevelOneComplete = false;
     public bool LevelTwoComplete = false;
     public bool LevelThreeComplete = false;
