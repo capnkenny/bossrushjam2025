@@ -5,13 +5,13 @@ public class Red_Samurai_Boss_Behavior : StateMachineBehaviour
     public float moveSpeed = 5f;
     public bool shouldResetAndSpin = false;
     public float waitTime = 15.0f;
+    private float defaultMoveSpeed = 5f;
     private Transform player;
     private Transform rouletteWheel;
     private Transform rouletteBall;
     private Rigidbody2D rb;
     private RouletteBall rouletteBallScript;
     private bool hasAttacked = false;
-    private bool isWaiting = true;
 
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
@@ -25,7 +25,6 @@ public class Red_Samurai_Boss_Behavior : StateMachineBehaviour
 
         hasAttacked = false;
         shouldResetAndSpin = false;
-        isWaiting = true;
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
@@ -41,6 +40,7 @@ public class Red_Samurai_Boss_Behavior : StateMachineBehaviour
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         animator.ResetTrigger("Attack");
+        animator.ResetTrigger("Hurt");
     }
 
     void WalkToRouletteBall(Animator animator)
@@ -66,7 +66,6 @@ public class Red_Samurai_Boss_Behavior : StateMachineBehaviour
                 animator.SetTrigger("Attack");
                 animator.SetBool("isWalking", false);
             }
-            
         }
     }
 
@@ -87,12 +86,19 @@ public class Red_Samurai_Boss_Behavior : StateMachineBehaviour
             }
         }
     }
+    public void StopWalking(Animator animator)
+    {
+        if (animator != null)
+        {
+            animator.SetBool("walk", false);
+        }
+    }
 
     public void AttackToResetAndSpinBall()
     {
-        if (rouletteBallScript != null)
+        if (rouletteBallScript != null && (Vector2.Distance(rb.position, rouletteBall.position) < 1.1f))
         {
-            rouletteBallScript.ResetAndSpinBall();
+            rouletteBallScript.ResetAndSpinBall(false);
             shouldResetAndSpin = false;
             hasAttacked = false;
         }
@@ -108,6 +114,12 @@ public class Red_Samurai_Boss_Behavior : StateMachineBehaviour
     {
         moveSpeed = Mathf.Max(1f, moveSpeed - amount); // Decrease movement speed by 1, but not below 1
         Debug.Log("Boss movement speed decreased");
+    }
+
+    public void ResetMoveSpeed()
+    {
+        moveSpeed = defaultMoveSpeed;
+        Debug.Log("Boss movement speed reset");
     }
 
     public void TriggerHurtAnimation(Animator animator)

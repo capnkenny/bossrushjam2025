@@ -22,6 +22,12 @@ public class RouletteBall : MonoBehaviour
     private Collider2D[] numberColliders;
     private bool moveToGreen = false;
     private Vector2 greenPosition;
+    private bool playerHit = false;
+    private Red_Samurai_Boss_Behavior boss;
+    private PlayerMovement player;
+    private Animator animator;
+    private Animator bossAnimator;
+    private Animator playerAnimator;
 
     void Start()
     {
@@ -34,6 +40,12 @@ public class RouletteBall : MonoBehaviour
         {
             Physics2D.IgnoreCollision(ballCollider, numberCollider, true);
         }
+
+        bossAnimator = GameObject.FindGameObjectWithTag("RouletteBoss").GetComponent<Animator>();
+        boss = bossAnimator.GetBehaviour<Red_Samurai_Boss_Behavior>();
+
+        playerAnimator = GameObject.FindGameObjectWithTag("Player").GetComponent<Animator>();
+        player = FindObjectOfType<PlayerMovement>();
 
         Vector2 initialDirection = new Vector2(0,1).normalized;
         rb.AddForce(initialDirection * initialForce, ForceMode2D.Impulse);
@@ -97,14 +109,6 @@ public class RouletteBall : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Return))
-        {
-            ResetAndSpinBall();
-        }
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            MoveBallToGreen();
-        }
         if (moveToGreen)
         {
             Vector2 ballPosition = rb.position;
@@ -124,7 +128,7 @@ public class RouletteBall : MonoBehaviour
         }
     }
 
-    public void ResetAndSpinBall()
+    public void ResetAndSpinBall(bool didPlayerHit)
     {
         Vector2 wheelCenter = rouletteWheel.position;
         Vector2 startPosition = wheelCenter + new Vector2(0, wheelRadius);
@@ -150,6 +154,15 @@ public class RouletteBall : MonoBehaviour
 
         initialForce = Random.Range(minForce, maxForce);
         rb.AddForce(tangent * initialForce, ForceMode2D.Impulse);
+
+        if (didPlayerHit)
+        {
+            playerHit = true;
+        }
+        else
+        {
+            playerHit = false;
+        }
     }
 
     void SnapToClosestNumber()
@@ -182,26 +195,65 @@ public class RouletteBall : MonoBehaviour
             string[] parts = tag.Split(' ');
             if (parts.Length == 3)
             {
-                string number = parts[1];
+                string numberStr = parts[1];
                 string color = parts[2];
-                Debug.Log($"Number: {number}, Color: {color}");
+                Debug.Log($"Number: {numberStr}, Color: {color}");
 
-                if (number == "0" && color == "Green")
+                if (int.TryParse(numberStr, out int number))
                 {
-                    failedAttempts = 0;
+                    if (number == 0 && color == "Green")
+                    {
+                        failedAttempts = 0;
+                    }
+                    else
+                    {
+                        failedAttempts++;
+                        if (failedAttempts >= maxFailedAttempts)
+                        {
+                            MoveBallToGreen();
+                            failedAttempts = 0;
+                        }
+                        else
+                        {
+                            applyBuffsOrDebuffs(playerHit, number, color);
+                        }
+                    }
                 }
                 else
                 {
-                    failedAttempts++;
-                    if (failedAttempts >= maxFailedAttempts)
-                    {
-                        MoveBallToGreen();
-                        failedAttempts = 0;
-                    }
+                    Debug.LogError($"Failed to parse number: {numberStr}");
                 }
 
                 // Make the ball kinematic to prevent it from being pushed out
                 rb.isKinematic = true;
+            }
+        }
+    }
+
+    void applyBuffsOrDebuffs(bool playerHit, int number, string color)
+    {
+        if (playerHit)
+        {
+            if (color == "Black")
+            {
+                playerAnimator.SetTrigger("Buff");
+                player.IncreaseMovementSpeed(number);
+            }
+            else
+            {
+                playerAnimator.SetTrigger("Debuff");
+                player.DecreaseMovementSpeed(number);
+            }
+        }
+        else
+        {
+            if (color == "Red")
+            {
+                boss.IncreaseMovementSpeed(number);
+            }
+            else
+            {
+                boss.DecreaseMovementSpeed(number);
             }
         }
     }
@@ -227,6 +279,18 @@ public class RouletteBall : MonoBehaviour
 
             // Move the ball to the new position
             rb.MovePosition(newPosition);
+            if (playerHit)
+            {
+                bossAnimator.SetTrigger("Hurt");
+                Debug.Log("Boss hurt");
+            }
+            else
+            {
+                playerAnimator.SetTrigger("Hurt");
+                Debug.Log("Player hurt");
+            }
+            player.ResetMoveSpeed();
+            boss.ResetMoveSpeed();
         }
     }
 }

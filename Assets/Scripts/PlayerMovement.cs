@@ -17,15 +17,13 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField]private Vector2 movement;
     [SerializeField]private Vector2 previousMovement;
     [SerializeField]private bool isRunning;
-
-    [Header("Wheel Properties")]
-    [SerializeField] private Transform wheelCenter;
-    [SerializeField] private float wheelRadius;
-
+    [SerializeField]private float defaultMoveSpeed = 5f;
     private float idleValue = 0.1f;
     private float trueSpeed = 0.0f;
     private float animationX = 0;
     private float animationY = 0;
+    private Transform rouletteBall;
+    private RouletteBall rouletteBallScript;
     
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -40,6 +38,9 @@ public class PlayerMovement : MonoBehaviour
         int playerLayer = LayerMask.NameToLayer("Player");
         int rouletteLayer = LayerMask.NameToLayer("Roulette");
         Physics2D.IgnoreLayerCollision(playerLayer, rouletteLayer, true);
+
+        rouletteBall = GameObject.FindGameObjectWithTag("Roulette_Ball").transform;
+        rouletteBallScript = rouletteBall.GetComponent<RouletteBall>();
     }
 
     // Update is called once per frame
@@ -65,7 +66,14 @@ public class PlayerMovement : MonoBehaviour
         rb.linearVelocity = trueMovement * trueSpeed;
         SetAnimatorMovement(movement, previousMovement);
 
-        // ConstrainPlayerWithinWheel();
+        if (Keyboard.current.spaceKey.wasPressedThisFrame)
+        {
+            animator.SetTrigger("Attack");
+            if (Vector2.Distance(rb.position, rouletteBall.position) < 2f)
+            {
+                rouletteBallScript.ResetAndSpinBall(true);
+            }
+        }
     }
 
     public void OnSprint(InputValue _)
@@ -91,6 +99,15 @@ public class PlayerMovement : MonoBehaviour
     {
         moveSpeed = Mathf.Max(1f, moveSpeed - amount); // Decrease movement speed by 1, but not below 1
         Debug.Log("Player movement speed decreased");
+    }
+    public void ResetMoveSpeed()
+    {
+        moveSpeed = defaultMoveSpeed;
+        Debug.Log("Player movement speed reset");
+    }
+    public void ResetAttackTrigger()
+    {
+        animator.ResetTrigger("Attack");
     }
 
     private void SetAnimatorMovement(Vector2 movementValue, Vector2 previousValue)
@@ -148,18 +165,5 @@ public class PlayerMovement : MonoBehaviour
 
         animator.SetFloat("InputX", animationX);
         animator.SetFloat("InputY", animationY);
-    }
-
-    private void ConstrainPlayerWithinWheel()
-    {
-        Vector2 playerPosition = rb.position;
-        Vector2 wheelCenterPosition = wheelCenter.position;
-        Vector2 directionFromCenter = playerPosition - wheelCenterPosition;
-
-        if (directionFromCenter.magnitude > wheelRadius)
-        {
-            directionFromCenter = Vector2.ClampMagnitude(directionFromCenter, wheelRadius);
-            rb.position = wheelCenterPosition + directionFromCenter;
-        }
     }
 }
