@@ -24,6 +24,7 @@ TagManager:
   - Land3-Slot
   - Currency
   - Projectile
+  - RouletteBoss
   layers:
   - Default
   - TransparentFX
@@ -35,7 +36,6 @@ TagManager:
   - Boss
   - Projectile
   - Player
-  - 
   - 
   - 
   - 
