@@ -10,6 +10,8 @@ public class SlotBossStillJump : StateMachineBehaviour
     [SerializeField] private float yValueForMax;
     [SerializeField] private float vertSpeed = 7;
     private bool up = true;
+
+    private SlotBossMechanics mech;
     
     private Vector3 pos;
 
@@ -20,6 +22,7 @@ public class SlotBossStillJump : StateMachineBehaviour
             animator.ResetTrigger(launchingTriggerName);
         reelAnimator = GameObject.FindGameObjectWithTag(tagNameForReel).GetComponent<Animator>();    
         pos = animator.transform.position;
+        mech = animator.gameObject.GetComponent<SlotBossMechanics>();
     }
 
     public override void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
@@ -44,6 +47,10 @@ public class SlotBossStillJump : StateMachineBehaviour
             else
             {
                 nextPos = pos;
+                if(mech)
+                {
+                    mech.PlayJumpSound();
+                }
             }
         }
 		

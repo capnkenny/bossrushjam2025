@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8579800386270693374}
   - component: {fileID: 5982404237134717631}
   - component: {fileID: 6505733361055907269}
-  - component: {fileID: 2164215244700341159}
+  - component: {fileID: 6694207543702860564}
   m_Layer: 5
   m_Name: PlayerStatsCanvas
   m_TagString: Untagged
@@ -58,8 +58,8 @@ Canvas:
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
-  m_VertexColorAlwaysGammaSpace: 0
-  m_AdditionalShaderChannelsFlag: 25
+  m_VertexColorAlwaysGammaSpace: 1
+  m_AdditionalShaderChannelsFlag: 1
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
   m_SortingOrder: 0
@@ -76,10 +76,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
@@ -104,7 +104,7 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!114 &2164215244700341159
+--- !u!114 &6694207543702860564
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -120,7 +120,7 @@ MonoBehaviour:
   healthSprites:
   - {fileID: 983696774, guid: 33c017cf16f2f7d4d9a9ee4455e74c47, type: 3}
   - {fileID: 430385097, guid: 33c017cf16f2f7d4d9a9ee4455e74c47, type: 3}
-  - {fileID: -844330113, guid: 33c017cf16f2f7d4d9a9ee4455e74c47, type: 3}
+  - {fileID: -516694765, guid: 33c017cf16f2f7d4d9a9ee4455e74c47, type: 3}
   - {fileID: 2106263481, guid: 33c017cf16f2f7d4d9a9ee4455e74c47, type: 3}
   - {fileID: 67774247, guid: 33c017cf16f2f7d4d9a9ee4455e74c47, type: 3}
   healthRenderer: {fileID: 4817400276233441008}
@@ -347,7 +347,6 @@ GameObject:
   m_Component:
   - component: {fileID: 7151593985866190532}
   - component: {fileID: 408185261709260336}
-  - component: {fileID: 2998386976721910536}
   m_Layer: 5
   m_Name: PlayerCurrency_Overlay
   m_TagString: Untagged
@@ -385,22 +384,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1954546653035665343}
   m_CullTransparentMesh: 1
---- !u!114 &2998386976721910536
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1954546653035665343}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 48e6e903a3d819a45b60a8f5fcd47b52, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gameObjectOne: {fileID: 1851764301987923451, guid: 843aff2fcded0bf45a582d207fa525e3, type: 3}
-  healthSprites: []
-  healthRenderer: {fileID: 0}
-  chipCount: {fileID: 0}
 --- !u!1 &4939870614571418539
 GameObject:
   m_ObjectHideFlags: 0

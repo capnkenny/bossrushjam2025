@@ -13,6 +13,7 @@ public class SlotBossJump : StateMachineBehaviour
     
     private Vector3 originalPosition;
     private GameObject boss;
+    private SlotBossMechanics mech;
 
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
@@ -20,6 +21,7 @@ public class SlotBossJump : StateMachineBehaviour
         boss = GameObject.FindGameObjectWithTag("SlotBoss");
         originalPosition = boss.transform.position;
         reelAnimator = GameObject.FindGameObjectWithTag(tagNameForReel).GetComponent<Animator>();
+        mech = animator.gameObject.GetComponent<SlotBossMechanics>();
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
@@ -83,6 +85,11 @@ public class SlotBossJump : StateMachineBehaviour
             
         if(stopAttack)
             animator.SetBool("attacking", false);
+
+        if(mech)
+        {
+            mech.PlayJumpSound();
+        }
     }
 
     // OnStateMove is called right after Animator.OnAnimatorMove()
