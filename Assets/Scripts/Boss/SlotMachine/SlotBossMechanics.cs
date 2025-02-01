@@ -170,7 +170,8 @@ public class SlotBossMechanics : MonoBehaviour
     {
         if(jumpClip && source)
         {
-            source.PlayOneShot(jumpClip);
+            if(!source.isPlaying)
+                source.PlayOneShot(jumpClip);
         }
     }
 
