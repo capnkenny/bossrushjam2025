@@ -9,8 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7755988992929295162}
-  - component: {fileID: 1108423573592198091}
   - component: {fileID: 7604884721315210860}
+  - component: {fileID: 352615152848891750}
   m_Layer: 8
   m_Name: ProjectileSpawner
   m_TagString: Untagged
@@ -33,44 +33,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 6583931089024787821}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1108423573592198091
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 206346098340524161}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fd77856c2b9db51469e2fde39c1ec70c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Projectile: {fileID: 8476707052816786176, guid: df1f4fc9f628bf34bb6642b0cf1a82de, type: 3}
-  projectileLifetime: 5
-  projectileSpeed: 100
-  projectileClip: {fileID: 8300000, guid: 68a1224decd074a4b9ee2aaf877362e6, type: 3}
-  PowerUpOne: {fileID: 7555065864214944955, guid: 608dd6a04e63d4445b023cf41135646e, type: 3}
-  projectileLifetimePUO: 5
-  projectileSpeedPUO: 150
-  projectileDamagePUO: 2
-  projectileClipPUO: {fileID: 8300000, guid: 76876848a49adf7cdbe1a5e8fce50bd2, type: 3}
-  PowerUpTwo: {fileID: 1957016300200230775, guid: a96fd9d63bc88a34987689bc47500e32, type: 3}
-  projectileLifetimePUT: 5
-  projectileSpeedPUT: 200
-  projectileDamagePUT: 3
-  projectileClipPUT: {fileID: 8300000, guid: 76876848a49adf7cdbe1a5e8fce50bd2, type: 3}
-  PowerUpThree: {fileID: 7555065864214944955, guid: 06883564108e5524991b3f978a81bd1e, type: 3}
-  projectileLifetimePUTH: 5
-  projectileSpeedPUTH: 250
-  projectileDamagePUTH: 5
-  projectileClipPUTH: {fileID: 8300000, guid: 76876848a49adf7cdbe1a5e8fce50bd2, type: 3}
-  FiringEnabled: 0
-  audioSource: {fileID: 7604884721315210860}
-  PowerUpMode: 0
-  firingRate: 0.1
-  aimPosition: {x: 0, y: 1, z: 0}
-  OutputLimit: 50
-  Frozen: 0
 --- !u!82 &7604884721315210860
 AudioSource:
   m_ObjectHideFlags: 0
@@ -168,6 +130,45 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &352615152848891750
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 206346098340524161}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8401ff183c98a4d4b937191a2f21ee9b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Projectile: {fileID: 8476707052816786176, guid: df1f4fc9f628bf34bb6642b0cf1a82de, type: 3}
+  projectileLifetime: 5
+  projectileSpeed: 100
+  projectileClip: {fileID: 8300000, guid: 68a1224decd074a4b9ee2aaf877362e6, type: 3}
+  PowerUpOne: {fileID: 7555065864214944955, guid: 608dd6a04e63d4445b023cf41135646e, type: 3}
+  projectileLifetimePUO: 5
+  projectileSpeedPUO: 150
+  projectileDamagePUO: 2
+  projectileClipPUO: {fileID: 8300000, guid: 76876848a49adf7cdbe1a5e8fce50bd2, type: 3}
+  PowerUpTwo: {fileID: 1957016300200230775, guid: a96fd9d63bc88a34987689bc47500e32, type: 3}
+  projectileLifetimePUT: 5
+  projectileSpeedPUT: 200
+  projectileDamagePUT: 3
+  projectileClipPUT: {fileID: 8300000, guid: 76876848a49adf7cdbe1a5e8fce50bd2, type: 3}
+  PowerUpThree: {fileID: 7555065864214944955, guid: 06883564108e5524991b3f978a81bd1e, type: 3}
+  projectileLifetimePUTH: 1
+  projectileSpeedPUTH: 1
+  projectileDamagePUTH: 1
+  projectileClipPUTH: {fileID: 8300000, guid: 76876848a49adf7cdbe1a5e8fce50bd2, type: 3}
+  FiringEnabled: 0
+  audioSource: {fileID: 1432925689245841526}
+  PowerUpMode: 0
+  firingRate: 0.1
+  scaleRate: 2
+  OutputLimit: 50
+  Frozen: 0
+  playerMovement: {fileID: 0}
 --- !u!1 &5136315895408305055
 GameObject:
   m_ObjectHideFlags: 0
@@ -183,10 +184,9 @@ GameObject:
   - component: {fileID: 3573894334572430721}
   - component: {fileID: 4862642925625839809}
   - component: {fileID: 4769757227104196007}
-  - component: {fileID: 5565452578901469291}
   - component: {fileID: 1432925689245841526}
   m_Layer: 0
-  m_Name: Player-P1
+  m_Name: Player-P1-Final
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -487,24 +487,6 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.3201202, y: 0.48000002}
   m_EdgeRadius: 0
---- !u!114 &5565452578901469291
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5136315895408305055}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 20d2906ae04d7d54896f20fc16d25eb0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gameManager: {fileID: 0}
-  playerAnimator: {fileID: 3573894334572430721}
-  bulletSpawner: {fileID: 1108423573592198091}
-  audioSource: {fileID: 1432925689245841526}
-  coinPickup: {fileID: 8300000, guid: 1552df9c0e5d7718d9a72ad0b49d3956, type: 3}
-  Allowed: 0
 --- !u!82 &1432925689245841526
 AudioSource:
   m_ObjectHideFlags: 0
