@@ -297,8 +297,9 @@ public class RouletteBall : MonoBehaviour
                 Debug.Log("Boss hurt, Current Health: " + bossHealth._currentHealth);
                 if (bossHealth._currentHealth == 0)
                 {
-                    gameManager.LoadLevelImmediate(2);
                     Debug.Log("Boss defeated");
+                    bossAnimator.SetTrigger("Death");
+                    StartCoroutine(gameManager.LoadLevelWithDelay(2,5));
                 }
             }
             else
