@@ -392,6 +392,7 @@ MonoBehaviour:
   movement: {x: 0, y: 0}
   previousMovement: {x: 0, y: 0}
   isRunning: 0
+  defaultMoveSpeed: 5
 --- !u!95 &3573894334572430721
 Animator:
   serializedVersion: 7
@@ -504,6 +505,7 @@ MonoBehaviour:
   bulletSpawner: {fileID: 1108423573592198091}
   audioSource: {fileID: 1432925689245841526}
   coinPickup: {fileID: 8300000, guid: 1552df9c0e5d7718d9a72ad0b49d3956, type: 3}
+  hurtPickup: {fileID: 8300000, guid: 45e54fd89eb612747a25058c5ab17437, type: 3}
   Allowed: 0
 --- !u!82 &1432925689245841526
 AudioSource:

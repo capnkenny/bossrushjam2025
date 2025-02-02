@@ -10,6 +10,7 @@ public class PlayerBattle : MonoBehaviour
     
     public AudioSource audioSource;
     public AudioClip coinPickup;
+    public AudioClip hurtPickup;
 
     public bool Allowed = false;
 
@@ -68,6 +69,10 @@ public class PlayerBattle : MonoBehaviour
                 {
                     playerAnimator.SetTrigger("Hurt");
                     isHurt = true;
+                    if(!audioSource.isPlaying)
+                    {
+                        audioSource.PlayOneShot(hurtPickup);
+                    }
                 }
             }
             //destroy the projectile
