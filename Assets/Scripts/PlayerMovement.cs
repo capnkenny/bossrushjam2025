@@ -68,10 +68,11 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        float halfSpeed = moveSpeed * 0.75f;
+        var trueMovement = movement;
         if (!gameManager.Paused)
         {
 
-            float halfSpeed = moveSpeed * 0.75f;
 
             trueSpeed += isRunning ? moveSpeed * Time.deltaTime : halfSpeed * Time.deltaTime;
 
@@ -81,8 +82,6 @@ public class PlayerMovement : MonoBehaviour
             }
             else if (!isRunning && trueSpeed >= halfSpeed)
                 trueSpeed = halfSpeed;
-
-            var trueMovement = movement;
             if (RestrictXMovement)
                 trueMovement.x = 0;
             if (RestrictYMovement)
@@ -91,15 +90,6 @@ public class PlayerMovement : MonoBehaviour
             rb.linearVelocity = trueMovement * trueSpeed;
             SetAnimatorMovement(movement, previousMovement);
         }
-        else if (!isRunning && trueSpeed >= halfSpeed)
-            trueSpeed = halfSpeed;
-
-        var trueMovement = movement;
-        if(RestrictXMovement)
-            trueMovement.x = 0;
-        if(RestrictYMovement)
-            trueMovement.y = 0;
-
         rb.linearVelocity = trueMovement * trueSpeed;
         SetAnimatorMovement(movement, previousMovement);
 
