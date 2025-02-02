@@ -14,6 +14,8 @@ public class PlayerStats : MonoBehaviour
     [SerializeField] GameObject callDealerOverlay;
     [SerializeField] GameObject callTheDealer;
     [SerializeField] Button returnToGameButton;
+    [SerializeField] GameObject gameOverScreen;
+    [SerializeField] Button restartGameButton;
 
     private GameManager gm;
 
@@ -34,6 +36,7 @@ public class PlayerStats : MonoBehaviour
 
     public void Start()
     {
+
         if (callTheDealer != null)
         {
             callTheDealer.SetActive(false);
@@ -42,6 +45,11 @@ public class PlayerStats : MonoBehaviour
         if (returnToGameButton != null)
         {
             returnToGameButton.onClick.AddListener(ReturnToGame);
+        }
+
+        if (restartGameButton != null)
+        {
+            restartGameButton.onClick.AddListener(RestartGame);
         }
     }
 
@@ -71,7 +79,8 @@ public class PlayerStats : MonoBehaviour
 
         if (playerHealth == 0)
         {
-            //gm.GameOver();
+            gm.Paused = true;
+            gameOverScreen.SetActive(true);
         }
         else
         {
@@ -102,5 +111,10 @@ public class PlayerStats : MonoBehaviour
         {
             callTheDealer.SetActive(false);
         }
+    }
+
+    public void RestartGame()
+    {
+        gm.ResetToLobby();
     }
 }
