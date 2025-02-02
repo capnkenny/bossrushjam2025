@@ -1,17 +1,26 @@
-using System.Collections;
-using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class SpinWheel : MonoBehaviour
 {
+    public GameManager gm;
+
     public float RotatePower;
     public float StopPower;
 
     private Rigidbody2D rbody;
+    private bool spinning;
+
     int inRotate;
 
     void Start()
     {
+        var list = FindObjectsByType<GameManager>(FindObjectsSortMode.None);
+        if (list != null && list.Length != 0)
+        {
+            gm = (GameManager)list.First();
+        }
+
         rbody = GetComponent<Rigidbody2D>();
     }
 
@@ -40,33 +49,57 @@ public class SpinWheel : MonoBehaviour
 
     public void Rotate()
     {
-        if (inRotate == 0)
+        int currency = gm.GetPlayerCurrency();
+
+        if (!spinning)
         {
-            rbody.AddTorque(RotatePower);
-            inRotate = 1;
+            if (currency >= 20)
+            {
+                gm.AddToCurrency(-20);
+            }
+            else
+            {
+                return;
+            }
+            if (inRotate == 0)
+            {
+                rbody.AddTorque(RotatePower * Random.Range(.5f, 3f));
+                inRotate = 1;
+            }
+
+            spinning = true;
         }
+
     }
 
     public void GetReward()
     {
         float rot = transform.eulerAngles.z;
 
-        if (rot > 0 && rot <= 90)
+        if (rot > 45 && rot <= 135)
         {
             GetComponent<RectTransform>().eulerAngles = new Vector3(0, 0, 90);
+            //Attack powerup increase
         }
-        else if (rot > 90 && rot <= 180)
+        else if (rot > 135 && rot <= 225)
         {
             GetComponent<RectTransform>().eulerAngles = new Vector3(0, 0, 180);
+            //Speed powerup increase
         }
-        else if (rot > 180 && rot <= 270)
+        else if (rot > 225 && rot <= 315)
         {
             GetComponent<RectTransform>().eulerAngles = new Vector3(0, 0, 270);
+            gm.PlayerHealth.DmgUnit(1);
         }
-        else if (rot > 270 && rot <= 360)
+        else if ((rot > 315 && rot <= 360) || (rot > 0 && rot <= 45))
         {
             GetComponent<RectTransform>().eulerAngles = new Vector3(0, 0, 360);
+            gm.PlayerHealth._currentMaxHealth ++;
+            gm.PlayerHealth.HealUnit(1);
         }
 
+        spinning = false;
+
     }
+
 }
