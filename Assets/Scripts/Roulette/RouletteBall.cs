@@ -34,6 +34,7 @@ public class RouletteBall : MonoBehaviour
 
     void Start()
     {
+        
         rb = GetComponent<Rigidbody2D>();
         ballCollider = GetComponent<Collider2D>();
 
@@ -51,6 +52,8 @@ public class RouletteBall : MonoBehaviour
 
         playerAnimator = GameObject.FindGameObjectWithTag("Player").GetComponent<Animator>();
         player = FindObjectOfType<PlayerMovement>();
+        player.rouletteMode = true;
+        player.BattleMode = false;
 
         var list = FindObjectsByType<GameManager>(FindObjectsSortMode.None);
         if (list != null && list.Length != 0)
@@ -299,6 +302,7 @@ public class RouletteBall : MonoBehaviour
                 {
                     Debug.Log("Boss defeated");
                     bossAnimator.SetTrigger("Death");
+                    gameManager.LevelTwoComplete = true;
                     StartCoroutine(gameManager.LoadLevelWithDelay(2,5));
                 }
             }

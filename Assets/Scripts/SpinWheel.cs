@@ -80,11 +80,13 @@ public class SpinWheel : MonoBehaviour
         {
             GetComponent<RectTransform>().eulerAngles = new Vector3(0, 0, 90);
             //Attack powerup increase
+            gm.PlayerPowerUpMode++;
         }
         else if (rot > 135 && rot <= 225)
         {
             GetComponent<RectTransform>().eulerAngles = new Vector3(0, 0, 180);
             //Speed powerup increase
+            gm.PlayerSpeedRate += 0.2f;
         }
         else if (rot > 225 && rot <= 315)
         {

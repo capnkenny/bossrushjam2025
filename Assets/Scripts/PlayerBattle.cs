@@ -10,6 +10,7 @@ public class PlayerBattle : MonoBehaviour
     
     public AudioSource audioSource;
     public AudioClip coinPickup;
+    public AudioClip hurtPickup;
 
     public bool Allowed = false;
 
@@ -17,6 +18,7 @@ public class PlayerBattle : MonoBehaviour
     private bool oneFrame = false;
 
     private InputAction attackAction;
+    private PlayerMovement player;
 
     void Start()
     {
@@ -27,6 +29,8 @@ public class PlayerBattle : MonoBehaviour
         }
 
         attackAction = InputSystem.actions.FindAction("Attack");
+        player = FindObjectOfType<PlayerMovement>();
+
     }
 
     void Update()
@@ -48,7 +52,7 @@ public class PlayerBattle : MonoBehaviour
             {oneFrame = true;}
         }
         
-        if(bulletSpawner)
+        if(bulletSpawner && player.BattleMode == true)
             bulletSpawner.FiringEnabled = attackAction.IsPressed();
     }
     
@@ -68,6 +72,10 @@ public class PlayerBattle : MonoBehaviour
                 {
                     playerAnimator.SetTrigger("Hurt");
                     isHurt = true;
+                    if(!audioSource.isPlaying)
+                    {
+                        audioSource.PlayOneShot(hurtPickup);
+                    }
                 }
             }
             //destroy the projectile

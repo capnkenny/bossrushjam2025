@@ -69,7 +69,7 @@ Material:
     m_Floats:
     - _ApplyEffect: 0
     - _EnableExternalAlpha: 0
-    - _Noise: 83.35559
+    - _Noise: 186.84787
     - _ZWrite: 0
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
