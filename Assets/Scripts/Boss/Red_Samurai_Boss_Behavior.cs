@@ -96,7 +96,7 @@ public class Red_Samurai_Boss_Behavior : StateMachineBehaviour
 
     public void AttackToResetAndSpinBall()
     {
-        if (rouletteBallScript != null && (Vector2.Distance(rb.position, rouletteBall.position) < 1.1f))
+        if (rouletteBallScript != null && (Vector2.Distance(rb.position, rouletteBall.position) < 2f))
         {
             rouletteBallScript.ResetAndSpinBall(false);
             shouldResetAndSpin = false;

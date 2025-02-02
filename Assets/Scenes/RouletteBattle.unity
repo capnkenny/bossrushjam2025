@@ -8068,6 +8068,10 @@ PrefabInstance:
       value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 5565452578901469291, guid: 4a8a4f84af0cd3c4382604195f4dcbae, type: 3}
+      propertyPath: bulletSpawner
+      value: 
+      objectReference: {fileID: 1351538229}
+    - target: {fileID: 5565452578901469291, guid: 4a8a4f84af0cd3c4382604195f4dcbae, type: 3}
       propertyPath: playerAnimator
       value: 
       objectReference: {fileID: 1160505057}
@@ -8120,6 +8124,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4a8a4f84af0cd3c4382604195f4dcbae, type: 3}
+--- !u!114 &1351538229 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1108423573592198091, guid: 4a8a4f84af0cd3c4382604195f4dcbae, type: 3}
+  m_PrefabInstance: {fileID: 1351538228}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd77856c2b9db51469e2fde39c1ec70c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1362799723
 GameObject:
   m_ObjectHideFlags: 0

@@ -69,7 +69,7 @@ public class RouletteBall : MonoBehaviour
             rb.AddTorque(torqueAmount);
             elapsedTime += Time.fixedDeltaTime;
 
-            float friction = elapsedTime > 5f ? finalFriction : initialFriction;
+            float friction = elapsedTime > spinTime ? finalFriction : initialFriction;
 
             // Apply friction to the ball
             rb.linearVelocity *= friction;
