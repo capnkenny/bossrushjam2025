@@ -20,11 +20,13 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField]private Vector2 movement;
     [SerializeField]private Vector2 previousMovement;
     [SerializeField]private bool isRunning;
-
+    [SerializeField]private float defaultMoveSpeed = 5f;
     private float idleValue = 0.1f;
     private float trueSpeed = 0.0f;
     private float animationX = 0;
     private float animationY = 0;
+    private Transform rouletteBall;
+    private RouletteBall rouletteBallScript;
     
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -37,19 +39,40 @@ public class PlayerMovement : MonoBehaviour
         }
 
         movement = new Vector2(0,0);
-            if (animationSmoothingValue <= 0)
-                animationSmoothingValue = 2;
-            if (moveSpeed <= 0)
-                moveSpeed = 2f;
+        if (animationSmoothingValue <= 0)
+            animationSmoothingValue = 2;
+        if (moveSpeed <= 0)
+            moveSpeed = 2f;
+
+        int playerLayer = LayerMask.NameToLayer("Player");
+        int rouletteLayer = LayerMask.NameToLayer("Roulette");
+        Physics2D.IgnoreLayerCollision(playerLayer, rouletteLayer, true);
+
+        GameObject rouletteBallObject = GameObject.FindGameObjectWithTag("Roulette_Ball");
+        if (rouletteBallObject != null)
+        {
+            rouletteBall = rouletteBallObject.transform;
+            rouletteBallScript = rouletteBall.GetComponent<RouletteBall>();
+
+            if (rouletteBallScript == null)
+            {
+                Debug.LogWarning("RouletteBall script not found on the Roulette_Ball GameObject.");
+            }
+        }
+        else
+        {
+            Debug.LogWarning("Roulette_Ball GameObject not found.");
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
+        float halfSpeed = moveSpeed * 0.75f;
+        var trueMovement = movement;
         if (!gameManager.Paused)
         {
 
-            float halfSpeed = moveSpeed * 0.75f;
 
             trueSpeed += isRunning ? moveSpeed * Time.deltaTime : halfSpeed * Time.deltaTime;
 
@@ -59,8 +82,6 @@ public class PlayerMovement : MonoBehaviour
             }
             else if (!isRunning && trueSpeed >= halfSpeed)
                 trueSpeed = halfSpeed;
-
-            var trueMovement = movement;
             if (RestrictXMovement)
                 trueMovement.x = 0;
             if (RestrictYMovement)
@@ -68,6 +89,25 @@ public class PlayerMovement : MonoBehaviour
 
             rb.linearVelocity = trueMovement * trueSpeed;
             SetAnimatorMovement(movement, previousMovement);
+        }
+        rb.linearVelocity = trueMovement * trueSpeed;
+        SetAnimatorMovement(movement, previousMovement);
+
+        if (Keyboard.current.spaceKey.wasPressedThisFrame)
+        {
+            animator.SetTrigger("Attack");
+
+            if (rouletteBall != null && rouletteBallScript != null)
+            {
+                if (Vector2.Distance(rb.position, rouletteBall.position) < 2f)
+                {
+                    rouletteBallScript.ResetAndSpinBall(true);
+                }
+            }
+            else
+            {
+                Debug.LogWarning("rouletteBall or rouletteBallScript is null.");
+            }
         }
     }
 
@@ -88,6 +128,27 @@ public class PlayerMovement : MonoBehaviour
             previousMovement = movement;
             movement = value.Get<Vector2>();
         }
+    }
+
+    public void IncreaseMovementSpeed(int amount)
+    {
+        moveSpeed += amount;
+        Debug.Log("Player movement speed increased");
+    }
+
+    public void DecreaseMovementSpeed(int amount)
+    {
+        moveSpeed = Mathf.Max(1f, moveSpeed - amount); // Decrease movement speed by 1, but not below 1
+        Debug.Log("Player movement speed decreased");
+    }
+    public void ResetMoveSpeed()
+    {
+        moveSpeed = defaultMoveSpeed;
+        Debug.Log("Player movement speed reset");
+    }
+    public void ResetAttackTrigger()
+    {
+        animator.ResetTrigger("Attack");
     }
 
     private void SetAnimatorMovement(Vector2 movementValue, Vector2 previousValue)

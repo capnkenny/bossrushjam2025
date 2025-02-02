@@ -601,6 +601,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 8408080212433945289, guid: ae5b99281dbf44b48b97dba9b4442088, type: 3}
   m_PrefabInstance: {fileID: 4367111026822748919}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &771287031 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2422545091728101212, guid: c2cd7c364a833e347876e7bb17aa55a3, type: 3}
+  m_PrefabInstance: {fileID: 1654468024244403658}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c09c34e77268904294f1e75f5f60b53, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &914919708
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1199,6 +1210,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Roulette
       objectReference: {fileID: 0}
+    - target: {fileID: 1130961469358262849, guid: c2cd7c364a833e347876e7bb17aa55a3, type: 3}
+      propertyPath: Locked
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1517136907982173884, guid: c2cd7c364a833e347876e7bb17aa55a3, type: 3}
       propertyPath: m_LocalPosition.x
       value: 56.257336
@@ -1239,6 +1254,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6200008391563706479, guid: c2cd7c364a833e347876e7bb17aa55a3, type: 3}
+      propertyPath: warpComponent
+      value: 
+      objectReference: {fileID: 771287031}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
