@@ -32,10 +32,5 @@ public class SlotLevelMgr : MonoBehaviour
             gm.LevelOneComplete = true;
             ExitLevelAnimator.SetTrigger("Appear");
         }
-
-        if(playerHealth && playerHealth._currentHealth == 0)
-        {
-            //game over screen
-        }
     }
 }

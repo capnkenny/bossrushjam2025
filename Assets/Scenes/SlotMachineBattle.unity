@@ -1083,7 +1083,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: efaaa35ce47d00c48b6e8b68f03a57c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  warpSpot: {fileID: 0}
+  warpSpot: {fileID: 916036587}
+  gm: {fileID: 0}
 --- !u!50 &916036589
 Rigidbody2D:
   serializedVersion: 5
@@ -1309,7 +1310,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1753003059761936050, guid: 4a8a4f84af0cd3c4382604195f4dcbae, type: 3}
       propertyPath: moveSpeed
-      value: 7
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 1753003059761936050, guid: 4a8a4f84af0cd3c4382604195f4dcbae, type: 3}
       propertyPath: BattleMode

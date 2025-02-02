@@ -88,7 +88,7 @@ public class SlotBossMechanics : MonoBehaviour
                 StartCoroutine(HurtAnim());
                 almostDeadTriggered = true;
             }
-            else if(!dead)
+            else if(!dead && BossHealth._currentHealth == 0)
             {
                 dead = true;
                 StartCoroutine(DeathAnim());
