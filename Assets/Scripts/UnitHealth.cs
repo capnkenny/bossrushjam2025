@@ -50,7 +50,7 @@ public class UnitHealth: MonoBehaviour
 
     public void HealUnit(int healAmount)
     {
-        if (_currentHealth < 0)
+        if (_currentHealth > 0)
         {
             _currentHealth += healAmount;
         }

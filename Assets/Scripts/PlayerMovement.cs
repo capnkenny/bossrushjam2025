@@ -1,8 +1,11 @@
+using System.Linq;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class PlayerMovement : MonoBehaviour
 {
+    private GameManager gameManager;
+
     [Header("Player Properties")]
     [SerializeField] public float moveSpeed;
     [SerializeField] private Rigidbody2D rb;
@@ -27,48 +30,64 @@ public class PlayerMovement : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        var list = FindObjectsByType<GameManager>(FindObjectsSortMode.None);
+        if (list != null && list.Length != 0)
+        {
+            gameManager = (GameManager)list.First();
+        }
+
         movement = new Vector2(0,0);
-        if (animationSmoothingValue <= 0)
-            animationSmoothingValue = 2;
-        if (moveSpeed <= 0)
-            moveSpeed = 2f;
+            if (animationSmoothingValue <= 0)
+                animationSmoothingValue = 2;
+            if (moveSpeed <= 0)
+                moveSpeed = 2f;
     }
 
     // Update is called once per frame
     void Update()
     {
-         float halfSpeed = moveSpeed * 0.75f;
-
-        trueSpeed += isRunning ? moveSpeed * Time.deltaTime : halfSpeed * Time.deltaTime;
-
-        if (isRunning && trueSpeed >= moveSpeed)
+        if (!gameManager.Paused)
         {
-            trueSpeed = moveSpeed;
+
+            float halfSpeed = moveSpeed * 0.75f;
+
+            trueSpeed += isRunning ? moveSpeed * Time.deltaTime : halfSpeed * Time.deltaTime;
+
+            if (isRunning && trueSpeed >= moveSpeed)
+            {
+                trueSpeed = moveSpeed;
+            }
+            else if (!isRunning && trueSpeed >= halfSpeed)
+                trueSpeed = halfSpeed;
+
+            var trueMovement = movement;
+            if (RestrictXMovement)
+                trueMovement.x = 0;
+            if (RestrictYMovement)
+                trueMovement.y = 0;
+
+            rb.linearVelocity = trueMovement * trueSpeed;
+            SetAnimatorMovement(movement, previousMovement);
         }
-        else if (!isRunning && trueSpeed >= halfSpeed)
-            trueSpeed = halfSpeed;
-
-        var trueMovement = movement;
-        if(RestrictXMovement)
-            trueMovement.x = 0;
-        if(RestrictYMovement)
-            trueMovement.y = 0;
-
-        rb.linearVelocity = trueMovement * trueSpeed;
-        SetAnimatorMovement(movement, previousMovement);
     }
 
     public void OnSprint(InputValue _)
     {
-        //Creates a "toggle" effect for running
-        if(!BattleMode)
-            isRunning = !isRunning;
+        if (!gameManager.Paused)
+        {
+            //Creates a "toggle" effect for running
+            if (!BattleMode)
+                isRunning = !isRunning;
+        }
     }
 
     public void OnMove(InputValue value)
     {
-        previousMovement = movement;
-        movement = value.Get<Vector2>();
+        if (!gameManager.Paused)
+        {
+            previousMovement = movement;
+            movement = value.Get<Vector2>();
+        }
     }
 
     private void SetAnimatorMovement(Vector2 movementValue, Vector2 previousValue)
