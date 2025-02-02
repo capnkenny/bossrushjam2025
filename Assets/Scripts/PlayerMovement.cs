@@ -73,8 +73,8 @@ public class PlayerMovement : MonoBehaviour
         if (!gameManager.Paused)
         {
 
-
             trueSpeed += isRunning ? moveSpeed * Time.deltaTime : halfSpeed * Time.deltaTime;
+            trueSpeed *= gameManager.PlayerSpeedRate;
 
             if (isRunning && trueSpeed >= moveSpeed)
             {
