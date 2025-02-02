@@ -146,4 +146,9 @@ public class PlayerMovement : MonoBehaviour
         animator.SetFloat("InputX", animationX);
         animator.SetFloat("InputY", animationY);
     }
+
+    public Vector2 GetDirection()
+    {
+        return (movement-previousMovement).normalized;
+    }
 }
