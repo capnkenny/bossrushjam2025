@@ -1,0 +1,58 @@
+Developers
+
+Ken Johnson
+Matt Chuong
+Alex Rousseau
+
+Graphics
+
+Roguelike/RPG Icons,
+Joe Williamson @JoeCreates (Twitter),
+https://opengameart.org/content/roguelikerpg-icons
+CC-BY-SA 3.0
+
+The Press Start 2P Project Authors (cody@zone38.net)
+(Pixel) Poker Cards, Ivoryred
+https://ivoryred.itch.io/pixel-poker-cards/devlog/739660/new-free-pack-poker-cards-
+CC-BY 4.0
+
+[FREE] Base Pixel Playing Card Set, Yewbi,
+https://unbent.itch.io/yewbi-playing-card-set-1, CC-BY 4.0
+Ninja Adventure - Asset Pack, Pixel-Boy
+https://pixel-boy.itch.io/ninja-adventure-asset-pack, CC0
+
+2D Top-Down Pixel Art Tileset: Casino - Jephed
+Game Between The Lines, https://gamebetweenthelines.com/
+
+Top-Down Pixel Art Characters - Jephed
+Game Between The Lines, https://gamebetweenthelines.com/
+
+"Main Character" Sprites by: Johannes Sjölund (wulax)
+Michael Whitlock (bigbeargames), Matthew Krohn (makrohn) 
+Nila122, David Conway Jr. (JaidynReiman), Carlo Enrico Victoria (Nemisys)
+Thane Brimhall (pennomi), bluecarrot16, 
+Luke Mehl, Benjamin K. Smith (BenCreating), ElizaWy, MuffinElZangano
+Durrani, kheftel, Stephen Challener (Redshrike), 
+TheraHedwig, Evert, Pierre Vigier (pvigier), Eliza Wyatt (ElizaWy)
+Johannes Sj?lund (wulax), Sander Frenken (castelonia), 
+dalonedrau, Lanea Zimmerman (Sharm), laetissima, kirts, Mark Weyer
+Joe White, Mandi Paugh, William.Thompsonj, 
+Manuel Riecke (MrBeast), Barbara Riviera, thecilekli, Yamilian, Fabzy, 
+Skorpio, Radomir Dopieralski, Emilio J. Sanchez-Sierra, kcilds/Rocetti/Eredah, 
+Cobra Hubbard (BlueVortexGames), DCSS authors, Marcel van de Steeg (MadMarcel), 
+DarkwallLKE, Charles Sanchez (CharlesGabriel), Shaun Williams,
+Tuomo Untinen (reemax), Stafford McIntyre, PlatForge project, Tracy, 
+Daniel Eddeland (daneeklu), William.Thomsponj, Joshua Taylor, Zi Ye,
+AntumDeluge, drjamgo@hotmail.com, Lori Angela Nagel (jastiv), 
+gr3yh47, pswerlang, XOR, tskaufma, Inboxninja, Dr. Jamgo, 
+LordNeo Sprites contributed as part of the Liberated Pixel Cup project 
+from OpenGameArt.org: https://opengameart.org/content/lpc-collection 
+License: Creative Commons Attribution-ShareAlike 3.0 (CC-BY-SA 3.0) 
+https://creativecommons.org/licenses/by-sa/3.0/ 
+Detailed credits:
+https://github.com/capnkenny/bossrushjam2025/Assets/Textures/MainCharacter/cm-credits.txt
+
+Audio
+
+"slow motion", Greg Davis
+https://freemusicarchive.org/music/Greg_Davis/8_Bit_EP/gregdavis_slowmotion/, CC BY-NC-ND 3.0
