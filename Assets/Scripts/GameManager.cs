@@ -17,12 +17,23 @@ public class GameManager : MonoBehaviour
     [SerializeField] public int CrapsTableSceneIndex;
 
     [Header("Game Mechanics")]
+
     [SerializeField] public float InitialDifficulty;
     [SerializeField, Range(1f, 10f)] public float DifficultyScale;
     [SerializeField] public UnitHealth PlayerHealth;
     [SerializeField] private int PlayerCurrency;
+    [SerializeField] public int PlayerPowerUpMode;
+
+    public bool LevelOneComplete = false;
+    public bool LevelTwoComplete = false;
+    public bool LevelThreeComplete = false;
 
     private float _defaultTransitionTime = 3.0f;
+
+    private double timePlayed;
+
+    public bool Paused = false;
+    public bool InGame = false;
 
     // Called when MonoBehaviour is first instantiated before Start()
     void Awake()
@@ -40,7 +51,10 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if(InGame)
+        {
+            timePlayed += Time.deltaTime;
+        }
     }
 
     public IEnumerator LoadLevelWithDelay(int index, int delayInSeconds)
@@ -68,4 +82,13 @@ public class GameManager : MonoBehaviour
     {
         PlayerCurrency += currency;
     }
+
+    public void ResetToLobby()
+    {
+        PlayerPowerUpMode = 0;
+        PlayerHealth._currentHealth = 5;
+        PlayerHealth._currentMaxHealth = 5;
+        LoadLevelImmediate(2);
+    }
+
 }

@@ -1,12 +1,22 @@
 using System.Linq;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PlayerBattle : MonoBehaviour
 {
     public GameManager gameManager;
     public Animator playerAnimator;
+    public PlayerSpawner bulletSpawner;
+    
+    public AudioSource audioSource;
+    public AudioClip coinPickup;
+
+    public bool Allowed = false;
+
     private bool isHurt = false;
     private bool oneFrame = false;
+
+    private InputAction attackAction;
 
     void Start()
     {
@@ -15,10 +25,17 @@ public class PlayerBattle : MonoBehaviour
         {
             gameManager = (GameManager)list.First();
         }
+
+        attackAction = InputSystem.actions.FindAction("Attack");
     }
 
     void Update()
     {
+        if(gameManager)
+        {
+            bulletSpawner.PowerUpMode = gameManager.PlayerPowerUpMode;
+        }
+
         if(playerAnimator && isHurt)
         {
             if(oneFrame)
@@ -30,7 +47,11 @@ public class PlayerBattle : MonoBehaviour
             else
             {oneFrame = true;}
         }
+        
+        if(bulletSpawner)
+            bulletSpawner.FiringEnabled = attackAction.IsPressed();
     }
+    
 
     void OnCollisionEnter2D(Collision2D collision)
     {
@@ -69,6 +90,12 @@ public class PlayerBattle : MonoBehaviour
             {
                 proj.Delete();
             }
+            if(audioSource && coinPickup)
+            {
+                audioSource.PlayOneShot(coinPickup);
+            }
         }
     }
+
+    
 }

@@ -10,9 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 4693273631088799714}
   - component: {fileID: 597891807088682941}
+  - component: {fileID: 7434419045363098693}
   m_Layer: 0
   m_Name: GameManager
-  m_TagString: Untagged
+  m_TagString: GameController
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -46,11 +47,32 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TitleScreenSceneIndex: 1
   SinglePlayerLobbySceneIndex: 2
-  RouletteCutsceneIndex: 3
+  RouletteCutsceneIndex: 0
   RouletteTableSceneIndex: 4
-  SlotMachineCutsceneIndex: 5
-  SlotMachineSceneIndex: 6
-  CrapsTableCutsceneIndex: 7
-  CrapsTableSceneIndex: 8
+  SlotMachineCutsceneIndex: 0
+  SlotMachineSceneIndex: 3
+  CrapsTableCutsceneIndex: 0
+  CrapsTableSceneIndex: 5
   InitialDifficulty: 1
   DifficultyScale: 1
+  PlayerHealth: {fileID: 7434419045363098693}
+  PlayerCurrency: 0
+  LevelOneComplete: 0
+  LevelTwoComplete: 0
+  LevelThreeComplete: 0
+  Paused: 0
+  InGame: 0
+--- !u!114 &7434419045363098693
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2069786971102727663}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9f0c5ccde31eed41abf918ee68d7595, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _currentHealth: 5
+  _currentMaxHealth: 5
