@@ -31,7 +31,7 @@ public class PlayerBattle : MonoBehaviour
 
     void Update()
     {
-        if(gameManager)
+        if(gameManager && bulletSpawner!= null)
         {
             bulletSpawner.PowerUpMode = gameManager.PlayerPowerUpMode;
         }
