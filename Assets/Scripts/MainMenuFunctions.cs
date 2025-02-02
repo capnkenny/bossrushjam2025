@@ -13,7 +13,7 @@ public class MainMenuFunctions : MonoBehaviour
 
     public TMPro.TextMeshProUGUI creditText;
     public float scrollSpeed = 0.05f;
-    public string filePath = "Assets/Resources/credits.txt";
+    public string filePath = "Assets/GameCredits.txt";
     public float scrollRate = 10f;
 
     private GameManager gm;

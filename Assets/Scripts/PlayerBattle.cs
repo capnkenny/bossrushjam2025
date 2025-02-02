@@ -18,6 +18,7 @@ public class PlayerBattle : MonoBehaviour
     private bool oneFrame = false;
 
     private InputAction attackAction;
+    private PlayerMovement player;
 
     void Start()
     {
@@ -28,6 +29,8 @@ public class PlayerBattle : MonoBehaviour
         }
 
         attackAction = InputSystem.actions.FindAction("Attack");
+        player = FindObjectOfType<PlayerMovement>();
+
     }
 
     void Update()
@@ -49,7 +52,7 @@ public class PlayerBattle : MonoBehaviour
             {oneFrame = true;}
         }
         
-        if(bulletSpawner)
+        if(bulletSpawner && player.BattleMode == true)
             bulletSpawner.FiringEnabled = attackAction.IsPressed();
     }
     

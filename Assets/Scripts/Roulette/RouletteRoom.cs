@@ -17,10 +17,10 @@ public class RouletteRoom : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (rouletteBallScript.isSpinning)
-        {
-            transform.Rotate(Vector3.forward, rotationSpeed * Time.deltaTime);
-        }
+        //if (rouletteBallScript.isSpinning)
+        //{
+        //    transform.Rotate(Vector3.forward, rotationSpeed * Time.deltaTime);
+        //}
     }
 
         // Method to start the ball spin and room rotation

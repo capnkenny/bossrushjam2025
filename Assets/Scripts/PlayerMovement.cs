@@ -12,7 +12,7 @@ public class PlayerMovement : MonoBehaviour
     
     [SerializeField] private Animator animator;
     [SerializeField] private float animationSmoothingValue;
-    [SerializeField] private bool BattleMode;
+    [SerializeField] public bool BattleMode;
     [SerializeField] private bool RestrictXMovement;
     [SerializeField] private bool RestrictYMovement;
     
@@ -27,6 +27,8 @@ public class PlayerMovement : MonoBehaviour
     private float animationY = 0;
     private Transform rouletteBall;
     private RouletteBall rouletteBallScript;
+
+    public bool rouletteMode = false;
     
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -93,7 +95,7 @@ public class PlayerMovement : MonoBehaviour
         rb.linearVelocity = trueMovement * trueSpeed;
         SetAnimatorMovement(movement, previousMovement);
 
-        if (Keyboard.current.spaceKey.wasPressedThisFrame)
+        if (Keyboard.current.spaceKey.wasPressedThisFrame && rouletteMode == true)
         {
             animator.SetTrigger("Attack");
 
