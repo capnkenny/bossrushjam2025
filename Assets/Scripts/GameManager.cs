@@ -17,6 +17,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] public int CrapsTableSceneIndex;
 
     [Header("Game Mechanics")]
+
     [SerializeField] public float InitialDifficulty;
     [SerializeField, Range(1f, 10f)] public float DifficultyScale;
     [SerializeField] public UnitHealth PlayerHealth;
@@ -81,4 +82,13 @@ public class GameManager : MonoBehaviour
     {
         PlayerCurrency += currency;
     }
+
+    public void ResetToLobby()
+    {
+        PlayerPowerUpMode = 0;
+        PlayerHealth._currentHealth = 5;
+        PlayerHealth._currentMaxHealth = 5;
+        LoadLevelImmediate(2);
+    }
+
 }
