@@ -3,6 +3,7 @@ using UnityEngine.UI;  // For accessing UI Button
 using TMPro;
 using System.Collections.Generic;
 using System.Linq;
+using UnityEngine.InputSystem;
 
 public class PlayerStats : MonoBehaviour
 {
@@ -72,11 +73,6 @@ public class PlayerStats : MonoBehaviour
             callDealerOverlay.SetActive(false);
         }
 
-        if (callDealerOverlay.activeSelf && Input.GetKeyDown(KeyCode.E))
-        {
-            ShowCallTheDealer();
-        }
-
         if (playerHealth == 0)
         {
             gm.Paused = true;
@@ -94,6 +90,14 @@ public class PlayerStats : MonoBehaviour
         
     }
 
+    public void OnInteract(InputValue value)
+    {   
+        if (value.isPressed && callDealerOverlay.activeSelf && !callTheDealer.activeSelf)
+        {
+            ShowCallTheDealer();
+        }
+    }
+
     public void ShowCallTheDealer()
     {
         if (callTheDealer != null && !callTheDealer.activeSelf)
@@ -104,10 +108,13 @@ public class PlayerStats : MonoBehaviour
 
     public void ReturnToGame()
     {
+        if(gm)
+            gm.Paused = false;
         if (callTheDealer != null)
         {
             callTheDealer.SetActive(false);
         }
+        
     }
 
     public void RestartGame()
