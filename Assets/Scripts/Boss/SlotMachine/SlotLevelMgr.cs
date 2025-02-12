@@ -27,7 +27,7 @@ public class SlotLevelMgr : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(bossMechs && bossMechs.dead)
+        if(bossMechs && bossMechs.dead && !gm.Paused)
         {
             gm.LevelOneComplete = true;
             ExitLevelAnimator.SetTrigger("Appear");

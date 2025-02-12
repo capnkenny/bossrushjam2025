@@ -25,11 +25,11 @@ public class PlayerBattle : MonoBehaviour
         var list = FindObjectsByType<GameManager>(FindObjectsSortMode.None);
         if (list != null && list.Length != 0)
         {
-            gameManager = (GameManager)list.First();
+            gameManager = list.First();
         }
 
         attackAction = InputSystem.actions.FindAction("Attack");
-        player = FindObjectOfType<PlayerMovement>();
+        player = gameObject.GetComponent<PlayerMovement>();
 
     }
 
@@ -44,12 +44,14 @@ public class PlayerBattle : MonoBehaviour
         {
             if(oneFrame)
             {
-            playerAnimator.ResetTrigger("Hurt");
-            isHurt = false;
-            oneFrame = false;
+                playerAnimator.ResetTrigger("Hurt");
+                isHurt = false;
+                oneFrame = false;
             }
             else
-            {oneFrame = true;}
+            {
+                oneFrame = true;
+            }
         }
         
         if(bulletSpawner && player.BattleMode == true)
@@ -59,7 +61,7 @@ public class PlayerBattle : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.gameObject.tag == "Projectile")
+        if(collision.gameObject.CompareTag("Projectile"))
         {
             var obj = collision.gameObject;
             var proj = obj.GetComponent<Projectile>();
@@ -86,7 +88,7 @@ public class PlayerBattle : MonoBehaviour
         }
 
         //Currency handling during game
-        if(collision.gameObject.tag == "Currency")
+        if(collision.gameObject.CompareTag("Currency"))
         {
             var obj = collision.gameObject;
             var proj = obj.GetComponent<Projectile>();

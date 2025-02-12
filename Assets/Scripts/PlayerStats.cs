@@ -91,10 +91,7 @@ public class PlayerStats : MonoBehaviour
         {
             gm.Paused = true;
         }
-        else
-        {
-            gm.Paused = false;
-        }
+        
     }
 
     public void ShowCallTheDealer()

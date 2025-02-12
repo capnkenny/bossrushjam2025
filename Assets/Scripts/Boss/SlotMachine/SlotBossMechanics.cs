@@ -1,6 +1,5 @@
 using System.Collections;
 using System.Linq;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class SlotBossMechanics : MonoBehaviour
@@ -29,6 +28,9 @@ public class SlotBossMechanics : MonoBehaviour
     private bool almostDeadTriggered = false;
     private bool deadTriggered = false;
     private Color origColor;
+    private Color iterativeHitColor;
+
+    private bool iterativeHurtActive = false;
 
 
     void Start()
@@ -36,7 +38,7 @@ public class SlotBossMechanics : MonoBehaviour
         var list = FindObjectsByType<GameManager>(FindObjectsSortMode.None);
         if (list != null && list.Length != 0)
         {
-            gameManager = (GameManager)list.First();
+            gameManager = list.First();
         }
 
         if(BossHealth)
@@ -47,17 +49,39 @@ public class SlotBossMechanics : MonoBehaviour
             Debug.Log("Boss values: "+ oneThirdHealth + " " + twoThirdsHealth + " " + oneSixthHealth + " ");
         }
         origColor = bossSprite.color;
+        iterativeHitColor = new(origColor.r, origColor.g, origColor.b, 0);
     }
 
     void Update()
     {
-        if(bossMaterial)
-        {
-            bossMaterial.SetFloat("_Noise", Random.Range(67.0f, 200f));
-        }
-        CheckIfHurt();
+        UpdateAnimatorSpeed(gameManager.Paused);
 
-        
+        if(!gameManager.Paused)
+        {
+            if(bossMaterial)
+            {
+                bossMaterial.SetFloat("_Noise", Random.Range(67.0f, 200f));
+            }
+            CheckIfHurt();
+        }
+    }
+
+    private void UpdateAnimatorSpeed(bool paused)
+    {
+        if(paused)
+        {
+            bossAnimator.speed = 0;
+            ReelOneAnimator.speed = 0;
+            ReelTwoAnimator.speed = 0;
+            ReelThreeAnimator.speed = 0;
+        }
+        else
+        {
+            bossAnimator.speed = 1;
+            ReelOneAnimator.speed = 1;
+            ReelTwoAnimator.speed = 1;
+            ReelThreeAnimator.speed = 1;
+        }
     }
 
     private void CheckIfHurt()
@@ -110,7 +134,7 @@ public class SlotBossMechanics : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.gameObject.tag == "PlayerProjectile")
+        if(collision.gameObject.CompareTag("PlayerProjectile"))
         {
             var proj = collision.gameObject.GetComponent<Projectile>();
             if(BossHealth)
@@ -123,6 +147,8 @@ public class SlotBossMechanics : MonoBehaviour
 
             if(proj)
                 proj.Delete();
+
+            StartCoroutine(IterativeHurtAnim());
         }
     }
 
@@ -164,6 +190,18 @@ public class SlotBossMechanics : MonoBehaviour
                 0,
                 0,
                 c.a);
+    }
+
+    public IEnumerator IterativeHurtAnim()
+    {
+        if(!iterativeHurtActive)
+        {
+            iterativeHurtActive = true;
+            bossSprite.color = iterativeHitColor;
+            yield return new WaitForSeconds(0.05f);
+            bossSprite.color = origColor;
+            iterativeHurtActive = false;
+        }
     }
 
     public void PlayJumpSound()

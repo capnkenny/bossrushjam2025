@@ -1,4 +1,3 @@
-using Castle.Core.Logging;
 using UnityEngine;
 
 public class SlotBossStillJump : StateMachineBehaviour

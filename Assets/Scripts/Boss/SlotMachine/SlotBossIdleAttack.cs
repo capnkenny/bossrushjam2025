@@ -26,18 +26,28 @@ public class SlotBossIdleAttack : StateMachineBehaviour
 
        if(passedTime >= timeToWait && !animator.GetBool("Dead"))
        {
-          int trigger = Random.Range(0, triggersToLaunch.Count);
-          animator.SetTrigger(triggersToLaunch[trigger]);
+          int trigger = Random.Range(1, 50);
+          int val = trigger % 10;
+          
+          Debug.Log($"Triggering attack {val}");
+          switch(val)
+          {
+            case 1:
+            {
+              animator.SetTrigger(triggersToLaunch[val]);
+              timeToWait = attackWaitDurationSeconds;
+              break;
+            }
+            default:
+            {
+              animator.SetTrigger(triggersToLaunch[0]);
+              timeToWait = attackWaitDurationSeconds + 1.0f;
+              break;
+            }
+          }
+          
           animator.SetBool("attacking", true);
           passedTime = 0;
-          if((trigger + 1) % 2 == 0)
-          {
-            timeToWait = attackWaitDurationSeconds + 1.0f;
-          }
-          else
-          {
-            timeToWait = attackWaitDurationSeconds;
-          }
        }
       }
       

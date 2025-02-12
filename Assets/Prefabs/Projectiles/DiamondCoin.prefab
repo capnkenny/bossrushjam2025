@@ -190,8 +190,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be4ca676f82992649aa6fed24450f729, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rb2d: {fileID: -5731151723532738041}
   projectileLifetime: 1
   speed: 1
+  DamageValue: 1
 --- !u!58 &7872617377711819847
 CircleCollider2D:
   m_ObjectHideFlags: 0

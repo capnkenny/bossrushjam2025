@@ -29,6 +29,8 @@ public class PlayerMovement : MonoBehaviour
     private RouletteBall rouletteBallScript;
 
     public bool rouletteMode = false;
+
+    private int _attackMode = 0;
     
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -70,11 +72,15 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(rouletteMode)
+            _attackMode = 1;
+        else
+            _attackMode = 0;
+
         float halfSpeed = moveSpeed * 0.75f;
         var trueMovement = movement;
         if (!gameManager.Paused)
         {
-
             trueSpeed += isRunning ? moveSpeed * Time.deltaTime : halfSpeed * Time.deltaTime;
             trueSpeed *= gameManager.PlayerSpeedRate;
 
@@ -91,11 +97,15 @@ public class PlayerMovement : MonoBehaviour
 
             rb.linearVelocity = trueMovement * trueSpeed;
             SetAnimatorMovement(movement, previousMovement);
+            animator.SetInteger("AttackMode", _attackMode);
         }
         rb.linearVelocity = trueMovement * trueSpeed;
         SetAnimatorMovement(movement, previousMovement);
+    }
 
-        if (Keyboard.current.spaceKey.wasPressedThisFrame && rouletteMode == true)
+    public void OnAttack(InputValue input)
+    {
+        if(!gameManager.Paused && rouletteMode && input.isPressed)
         {
             animator.SetTrigger("Attack");
 
@@ -106,10 +116,6 @@ public class PlayerMovement : MonoBehaviour
                     rouletteBallScript.ResetAndSpinBall(true);
                 }
             }
-            else
-            {
-                Debug.LogWarning("rouletteBall or rouletteBallScript is null.");
-            }
         }
     }
 
@@ -117,7 +123,6 @@ public class PlayerMovement : MonoBehaviour
     {
         if (!gameManager.Paused)
         {
-            //Creates a "toggle" effect for running
             if (!BattleMode)
                 isRunning = !isRunning;
         }

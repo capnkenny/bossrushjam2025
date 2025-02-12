@@ -56,14 +56,12 @@ public class SlotMechanics : MonoBehaviour
         {
             case 1:
             {
-                Debug.Log("Launching Reel one - first");
                 ReelOneAnimator.speed = Random.Range(0.75f, 1.25f);
                 ReelOneAnimator.Play(RollingAnimName);
                 break;
             }
             case 2:
             {
-                Debug.Log("Launching Reel two - first");
                 ReelTwoAnimator.speed = Random.Range(0.75f, 1.25f);
                 ReelTwoAnimator.Play(RollingAnimName);
                 break;
@@ -71,7 +69,6 @@ public class SlotMechanics : MonoBehaviour
             case 3:
             default:
             {
-                Debug.Log("Launching Reel three - first");
                 ReelThreeAnimator.speed = Random.Range(0.75f, 1.25f);
                 ReelThreeAnimator.Play(RollingAnimName);
                 break;

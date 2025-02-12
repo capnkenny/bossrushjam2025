@@ -1,3 +1,4 @@
+using System.Linq;
 using System.Threading;
 using UnityEngine;
 
@@ -21,10 +22,22 @@ public class ProjectileSpawner : MonoBehaviour
     private GameObject spawned;
     private float timer = 0f;
     private int spawnCount = 0;
+    private GameManager gameManager;
+
+
+    void Start()
+    {
+        var list = FindObjectsByType<GameManager>(FindObjectsSortMode.None);
+        if (list != null && list.Length != 0)
+        {
+            gameManager = list.First();
+        }
+    }
+
 
     void Update()
     {
-        if(FiringEnabled && !Frozen)
+        if(FiringEnabled && !Frozen && !gameManager.Paused)
         {
             timer += Time.deltaTime;
             if(timer >= firingRate)
@@ -33,7 +46,7 @@ public class ProjectileSpawner : MonoBehaviour
                 timer = 0;
             }
         }
-        else if(timer != 0)
+        else if(timer != 0 && !gameManager.Paused)
         {
             timer = 0;
             spawnCount = 0;
