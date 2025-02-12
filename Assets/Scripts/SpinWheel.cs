@@ -8,7 +8,8 @@ public class SpinWheel : MonoBehaviour
     public float RotatePower;
     public float StopPower;
 
-    private Rigidbody2D rbody;
+    public Rigidbody2D rbody;
+
     private bool spinning;
 
     int inRotate;
@@ -18,10 +19,8 @@ public class SpinWheel : MonoBehaviour
         var list = FindObjectsByType<GameManager>(FindObjectsSortMode.None);
         if (list != null && list.Length != 0)
         {
-            gm = (GameManager)list.First();
+            gm = list.First();
         }
-
-        rbody = GetComponent<Rigidbody2D>();
     }
 
     float t;

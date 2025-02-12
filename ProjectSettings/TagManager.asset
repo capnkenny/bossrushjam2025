@@ -26,6 +26,7 @@ TagManager:
   - Projectile
   - RouletteBoss
   - PlayerProjectile
+  - Blipper
   layers:
   - Default
   - TransparentFX
@@ -39,8 +40,7 @@ TagManager:
   - Player
   - Dealer
   - Destroyer
-  - 
-  - 
+  - WheelSpinner
   - 
   - 
   - 

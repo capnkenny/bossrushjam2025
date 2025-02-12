@@ -54,7 +54,7 @@ public class PlayerBattle : MonoBehaviour
             }
         }
         
-        if(bulletSpawner && player.BattleMode == true)
+        if(bulletSpawner && player.BattleMode == true && !gameManager.Paused)
             bulletSpawner.FiringEnabled = attackAction.IsPressed();
     }
     

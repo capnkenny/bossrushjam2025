@@ -65,7 +65,8 @@ public class PlayerStats : MonoBehaviour
         if (gm.GetPlayerCurrency() >= 20)
         {
             buttonText.text = "Bet 20 Chips";
-            callDealerOverlay.SetActive(true);
+            if(!callTheDealer.activeSelf)
+                callDealerOverlay.SetActive(true);
         }
         else
         {
@@ -82,12 +83,6 @@ public class PlayerStats : MonoBehaviour
         {
             healthRenderer.sprite = healthSprites[playerHealth - 1];
         }
-
-        if (callTheDealer.activeSelf)
-        {
-            gm.Paused = true;
-        }
-        
     }
 
     public void OnInteract(InputValue value)
@@ -103,6 +98,8 @@ public class PlayerStats : MonoBehaviour
         if (callTheDealer != null && !callTheDealer.activeSelf)
         {
             callTheDealer.SetActive(true);
+            callDealerOverlay.SetActive(false);
+            gm.Paused = true;
         }
     }
 
@@ -114,7 +111,6 @@ public class PlayerStats : MonoBehaviour
         {
             callTheDealer.SetActive(false);
         }
-        
     }
 
     public void RestartGame()
